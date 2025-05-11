@@ -1,0 +1,32 @@
+.text-green{
+    color: #1aa179;
+}
+
+.nav-link.active {
+  background-color: #1aa179 !important;
+  border-radius: 100px;
+  font-weight: 600;
+  padding-left: 25px;
+  padding-right: 25px;
+  color: white !important;
+}
+
+.btn.btn-success {
+  padding: 12px !important;
+}
+
+.btn.btn-danger{
+  font-weight: 600;
+}
+
+.padding-default{
+    padding: 100px 100px 170px;
+}
+
+.border-radius-default{
+    border-radius: 25px !important;
+}
+
+.bg-green{
+    background-color: #d2f4ea;
+}
