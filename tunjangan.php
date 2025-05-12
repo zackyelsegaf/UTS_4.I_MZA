@@ -15,7 +15,7 @@
 
 <?php
 class Gaji {
-    public $nama_pegawai;
+    public $nama_pegawai;;
     public $jabatan;
     public $gaji_pokok;
     public $tunjangan;
