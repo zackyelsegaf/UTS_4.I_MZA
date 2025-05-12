@@ -117,7 +117,7 @@ include('navbar.php');
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item p-3"><strong>Nama Jabatan:</strong> ' . $this->nama_jabatan . '</li>
                             <li class="list-group-item p-3"><strong>Gaji Pokok:</strong> ' . $this->gaji_pokok . '</li>
-                            <li class="list-group-item p-3"><strong>Gaji Pokok:</strong> ' . $this->tunjangan . '</li>
+                            <li class="list-group-item border-radius-default p-3"><strong>Gaji Pokok:</strong> ' . $this->tunjangan . '</li>
                         </ul>
                     </div>
                 </div>';

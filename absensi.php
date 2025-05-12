@@ -136,7 +136,7 @@
         <div class="col-md-6 mb-5">
             <div class="card border-radius-default p-0">
                 <div class="card-header bg-green p-3 text-green">
-                    <h5 class="mb-0"><strong>Input Data Jabatan</strong></h5>
+                    <h5 class="mb-0"><strong>Input Data Absensi</strong></h5>
                 </div>
                 <form action="absensi.php" method="POST">
                     <div class="row p-4">
@@ -211,7 +211,7 @@
                 <div class="col-md-6">
                     <div class="card border-radius-default p-0">
                         <div class="card-header bg-green p-3 text-green">
-                            <h5 class="mb-0"><strong>Total Slip Gaji</strong></h5>
+                            <h5 class="mb-0"><strong>Data Absensi - ' . htmlspecialchars($this->nama) . ' </strong></h5>
                         </div>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item p-3"><strong>Nip:</strong> ' . htmlspecialchars($this->nip) . '</li>
@@ -219,7 +219,7 @@
                             <li class="list-group-item p-3"><strong>Tanggal:</strong> ' . htmlspecialchars($this->tanggal) . '</li>
                             <li class="list-group-item p-3"><strong>Jam Masuk:</strong> ' . htmlspecialchars($this->jamMasuk) . '</li>
                             <li class="list-group-item p-3"><strong>Jam Keluar:</strong> ' . htmlspecialchars($this->jamKeluar) . '</li>
-                            <li class="list-group-item p-3"><strong>Status Kehadiran:</strong> ' . htmlspecialchars($this->status) . '</li>
+                            <li class="list-group-item border-radius-default p-3"><strong>Status Kehadiran:</strong> ' . htmlspecialchars($this->status) . '</li>
                         </ul>
                     </div>
                 </div>';

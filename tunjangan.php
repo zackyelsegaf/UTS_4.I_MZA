@@ -89,7 +89,7 @@ include('navbar.php')
                             <li class="list-group-item p-3"><strong>Gaji Pokok:</strong> Rp ' . number_format($this->gaji_pokok, 0, ',', '.') . '</li>
                             <li class="list-group-item p-3"><strong>Tunjangan:</strong> Rp ' . number_format($this->tunjangan, 0, ',', '.') . '</li>
                             <li class="list-group-item p-3"><strong>Lembur (' . $this->jam_lembur . ' jam):</strong> Rp ' . number_format($this->hitungLembur(), 0, ',', '.') . '</li>
-                            <li class="list-group-item p-3"><strong>Potongan:</strong> Rp ' . number_format($this->potongan, 0, ',', '.') . '</li>
+                            <li class="list-group-item border-radius-default p-3"><strong>Potongan:</strong> Rp ' . number_format($this->potongan, 0, ',', '.') . '</li>
                         </ul>
                         <div class="p-4">
                             <h5 class="text-end"><strong>Total Gaji: Rp ' . number_format($this->totalGaji(), 0, ',', '.') . '</strong></h5>
