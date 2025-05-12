@@ -6,7 +6,7 @@
         <div class="row padding-default justify-content-center">
             <div class="col-md-6">
                 <div class="card border-radius-default p-4">
-                        <h3 class="text-center mb-4 text-green">Login | Administrasi Kepegawaian</h3>
+                    <h3 class="text-center mb-4 text-green">Login | Administrasi Kepegawaian</h3>
                     <form action="proses_login.php" method="POST">
                         <div class="col-md-12 mb-3">
                             <label for="username_655" class="form-label">Username</label>
