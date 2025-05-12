@@ -226,17 +226,13 @@
           }
         }
 
-
         if ($_POST) {
-
-          // Data Absensi
           $nip = $_POST["nip_txt"];
           $nama = $_POST["nama_karyawan"];
           $tanggal_absen = $_POST["tanggal_absen"];
           $jamMasuk = $_POST["jam_masuk"];
           $jamKeluar = $_POST["jam_keluar"];
           $status_absen = $_POST["status_absen"];
-
 
           $absensi = new Absensi($nip, $nama, $tanggal_absen, $jamMasuk, $jamKeluar, $status_absen);
           $absensi->tampil();

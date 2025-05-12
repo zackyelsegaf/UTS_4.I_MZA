@@ -22,7 +22,7 @@
             <a class="nav-link text-green <?= ($page == 'absensi.php') ? 'active' : '' ?>" href="absensi.php"><i class="fa-solid fa-stopwatch">&nbsp;&nbsp;&nbsp;</i>Absensi</a>
         </li>
         <li class="nav-item ms-2">
-            <a class="btn btn-danger border-radius-default" href="login.php"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            <a class="btn btn-danger border-radius-default" href="logout.php"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
         </li>
     </ul>
 </nav>
