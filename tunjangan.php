@@ -4,17 +4,42 @@ include('navbar.php')
 ?>
 
 <div class="container">
-    <div class="row padding-default justify-content-center">
-        <div class="col-md-6">
-            <div class="card border-radius-default p-4">
+    <div class="row py-3 px-3 justify-content-center">
+        <div class="col-md-6 mb-5">
+            <div class="card border-radius-default p-0">
+                <div class="card-header bg-green p-3 text-green">
+                    <h5 class="mb-0"><strong>Input Slip Gaji</strong></h5>
+                </div>
                 <form action="tunjangan.php" method="POST">
-                    Nama: <input type="text" name="nama_txt"><br>
-                    Jabatan: <input type="text" name="jabatan_txt"><br>
-                    Gaji Pokok: <input type="number" name="gaji_pokok_txt"><br>
-                    Tunjangan: <input type="number" name="tunjangan_txt"><br>
-                    Jam Lembur: <input type="number" name="lembur_txt"><br>
-                    Potongan: <input type="number" name="potongan_txt"><br>
-                    <button type="submit" name="submit">Hitung Gaji</button>
+                    <div class="row p-4">
+                        <div class="col-md-12 mb-3">
+                            <label for="nama_txt" class="form-label">Nama</label>
+                            <input type="text" class="form-control" name="nama_txt" required autofocus>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="jabatan_txt" class="form-label">Jabatan</label>
+                            <input type="text" class="form-control" name="jabatan_txt" required autofocus>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="gaji_pokok_txt" class="form-label">Gaji Pokok</label>
+                            <input type="text" class="form-control" name="gaji_pokok_txt" required autofocus>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="tunjangan_txt" class="form-label">Tunjangan</label>
+                            <input type="text" class="form-control" name="tunjangan_txt" required autofocus>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="lembur_txt" class="form-label">Lembur</label>
+                            <input type="text" class="form-control" name="lembur_txt" required autofocus>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="potongan_txt" class="form-label">Potongan</label>
+                            <input type="text" class="form-control" name="potongan_txt" required autofocus>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success border-radius-default" name="submit">Hitung Gaji</button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
@@ -54,19 +79,19 @@ include('navbar.php')
             {
                 echo '
                 <div class="col-md-6">
-                    <div class="card border-radius-default p-4">
-                        <div class="card-header bg-primary text-white">
-                            <h4 class="mb-0">Slip Gaji</h4>
+                    <div class="card border-radius-default p-0">
+                        <div class="card-header bg-green p-3 text-green">
+                            <h5 class="mb-0"><strong>Total Slip Gaji</strong></h5>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><strong>Nama Pegawai:</strong> ' . $this->nama_pegawai . '</li>
-                            <li class="list-group-item"><strong>Jabatan:</strong> ' . $this->jabatan . '</li>
-                            <li class="list-group-item"><strong>Gaji Pokok:</strong> Rp ' . number_format($this->gaji_pokok, 0, ',', '.') . '</li>
-                            <li class="list-group-item"><strong>Tunjangan:</strong> Rp ' . number_format($this->tunjangan, 0, ',', '.') . '</li>
-                            <li class="list-group-item"><strong>Lembur (' . $this->jam_lembur . ' jam):</strong> Rp ' . number_format($this->hitungLembur(), 0, ',', '.') . '</li>
-                            <li class="list-group-item"><strong>Potongan:</strong> Rp ' . number_format($this->potongan, 0, ',', '.') . '</li>
+                            <li class="list-group-item p-3"><strong>Nama Pegawai:</strong> ' . $this->nama_pegawai . '</li>
+                            <li class="list-group-item p-3"><strong>Jabatan:</strong> ' . $this->jabatan . '</li>
+                            <li class="list-group-item p-3"><strong>Gaji Pokok:</strong> Rp ' . number_format($this->gaji_pokok, 0, ',', '.') . '</li>
+                            <li class="list-group-item p-3"><strong>Tunjangan:</strong> Rp ' . number_format($this->tunjangan, 0, ',', '.') . '</li>
+                            <li class="list-group-item p-3"><strong>Lembur (' . $this->jam_lembur . ' jam):</strong> Rp ' . number_format($this->hitungLembur(), 0, ',', '.') . '</li>
+                            <li class="list-group-item p-3"><strong>Potongan:</strong> Rp ' . number_format($this->potongan, 0, ',', '.') . '</li>
                         </ul>
-                        <div class="mt-3">
+                        <div class="p-4">
                             <h5 class="text-end"><strong>Total Gaji: Rp ' . number_format($this->totalGaji(), 0, ',', '.') . '</strong></h5>
                         </div>
                     </div>
