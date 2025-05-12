@@ -1,9 +1,9 @@
 <?php
-include('header.php');
-include('navbar.php')
+  include('header.php');
+  include('navbar.php');
 ?>
 
-<style>
+<!-- <style>
   /*Reset & base*/
   * {
     box-sizing: border-box;
@@ -130,87 +130,120 @@ include('navbar.php')
       max-width: 100%;
     }
   }
-</style>
-</head>
-
-<form method="post">
-
-  <h3>Input Absensi</h3>
-  Nip : <input type="text" name="nip_txt"><br>
-  Nama Karyawan: <input type="text" name="nama_karyawan"><br>
-  Tanggal: <input type="date" name="tanggal_absen"><br>
-  Jam Masuk: <input type="time" name="jam_masuk"><br>
-  Jam Keluar: <input type="time" name="jam_keluar"><br>
-  Status:
-  <select name="status_absen">
-    <option value="Hadir">Hadir</option>
-    <option value="Izin">Izin</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Alpha">Alpha</option>
-  </select><br><br>
-
-  <input type="submit" value="Kirim">
-</form>
-
-<?php
-class Absensi
-{
-  var $nip;
-  var $nama;
-  var $tanggal;
-  var $jamMasuk;
-  var $jamKeluar;
-  var $status;
-
-
-  public function __construct($nip, $nama, $tanggal, $jam_masuk, $jam_keluar, $status)
-  {
-    $this->setNip($nip);
-    $this->nama = $nama;
-    $this->tanggal = $tanggal;
-    $this->jamMasuk = $jam_masuk;
-    $this->jamKeluar = $jam_keluar;
-    $this->status = $status;
-  }
-
-  public function setNip($nip)
-  {
-    if (empty($nip)) {
-      throw new Exception("Nip tidak boleh kosong.");
-    }
-    $this->nip = $nip;
-  }
-
-  public function tampil()
-  {
-    echo "<h4>Data Absensi:</h4>";
-    echo "Nip : " . htmlspecialchars($this->nip) . "<br>";
-    echo "Nama Karyawan : " . htmlspecialchars($this->nama) . "<br>";
-    echo "Tanggal: " . htmlspecialchars($this->tanggal) . "<br>";
-    echo "Jam Masuk: " . htmlspecialchars($this->jamMasuk) . "<br>";
-    echo "Jam Keluar: " . htmlspecialchars($this->jamKeluar) . "<br>";
-    echo "Status: " . htmlspecialchars($this->status) . "<br><br>";
-  }
-}
+</style> -->
+<div class="container">
+    <div class="row py-3 px-3 justify-content-center">
+        <div class="col-md-6 mb-5">
+            <div class="card border-radius-default p-0">
+                <div class="card-header bg-green p-3 text-green">
+                    <h5 class="mb-0"><strong>Input Data Jabatan</strong></h5>
+                </div>
+                <form action="absensi.php" method="POST">
+                    <div class="row p-4">
+                        <div class="col-md-12 mb-3">
+                            <label for="nip_txt" class="form-label">NIP Pegawai</label>
+                            <input type="text" class="form-control" name="nip_txt" required autofocus>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="nama_karyawan" class="form-label">Nama Pegawai</label>
+                            <input type="text" class="form-control" name="nama_karyawan" required autofocus>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="tanggal_absen" class="form-label">Tanggal Absen</label>
+                            <input type="date" class="form-control" name="tanggal_absen" required autofocus>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="jam_masuk" class="form-label">Jam Masuk</label>
+                            <input type="time" class="form-control" name="jam_masuk" required autofocus>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="jam_keluar" class="form-label">Jam Keluar</label>
+                            <input type="time" class="form-control" name="jam_keluar" required autofocus>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="nip_txt" class="form-label">Status Kehadiran</label>
+                            <select class="form-select" name="status_absen">
+                                <option value="Hadir">Hadir</option>
+                                <option value="Izin">Izin</option>
+                                <option value="Sakit">Sakit</option>
+                                <option value="Alpha">Alpha</option>
+                            </select>                        
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success border-radius-default" name="submit">Kirim Data</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <?php
+        class Absensi
+        {
+          var $nip;
+          var $nama;
+          var $tanggal;
+          var $jamMasuk;
+          var $jamKeluar;
+          var $status;
 
 
-if ($_POST) {
+          public function __construct($nip, $nama, $tanggal, $jam_masuk, $jam_keluar, $status)
+          {
+            $this->setNip($nip);
+            $this->nama = $nama;
+            $this->tanggal = $tanggal;
+            $this->jamMasuk = $jam_masuk;
+            $this->jamKeluar = $jam_keluar;
+            $this->status = $status;
+          }
 
-  // Data Absensi
-  $nip = $_POST["nip_txt"];
-  $nama = $_POST["nama_karyawan"];
-  $tanggal_absen = $_POST["tanggal_absen"];
-  $jamMasuk = $_POST["jam_masuk"];
-  $jamKeluar = $_POST["jam_keluar"];
-  $status_absen = $_POST["status_absen"];
+          public function setNip($nip)
+          {
+            if (empty($nip)) {
+              throw new Exception("Nip tidak boleh kosong.");
+            }
+            $this->nip = $nip;
+          }
+
+          public function tampil()
+          {
+            echo '
+                <div class="col-md-6">
+                    <div class="card border-radius-default p-0">
+                        <div class="card-header bg-green p-3 text-green">
+                            <h5 class="mb-0"><strong>Total Slip Gaji</strong></h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item p-3"><strong>Nip:</strong> ' . htmlspecialchars($this->nip) . '</li>
+                            <li class="list-group-item p-3"><strong>Nama Karyawan:</strong> ' . htmlspecialchars($this->nama) . '</li>
+                            <li class="list-group-item p-3"><strong>Tanggal:</strong> ' . htmlspecialchars($this->tanggal) . '</li>
+                            <li class="list-group-item p-3"><strong>Jam Masuk:</strong> ' . htmlspecialchars($this->jamMasuk) . '</li>
+                            <li class="list-group-item p-3"><strong>Jam Keluar:</strong> ' . htmlspecialchars($this->jamKeluar) . '</li>
+                            <li class="list-group-item p-3"><strong>Status Kehadiran:</strong> ' . htmlspecialchars($this->status) . '</li>
+                        </ul>
+                    </div>
+                </div>';
+          }
+        }
 
 
-  $absensi = new Absensi($nip, $nama, $tanggal_absen, $jamMasuk, $jamKeluar, $status_absen);
-  $absensi->tampil();
-}
+        if ($_POST) {
+
+          // Data Absensi
+          $nip = $_POST["nip_txt"];
+          $nama = $_POST["nama_karyawan"];
+          $tanggal_absen = $_POST["tanggal_absen"];
+          $jamMasuk = $_POST["jam_masuk"];
+          $jamKeluar = $_POST["jam_keluar"];
+          $status_absen = $_POST["status_absen"];
 
 
-?>
+          $absensi = new Absensi($nip, $nama, $tanggal_absen, $jamMasuk, $jamKeluar, $status_absen);
+          $absensi->tampil();
+        }
+        ?>
+    </div>
+</div>
 
 <?php
 include('footer.php');

@@ -3,7 +3,7 @@ include('header.php');
 include('navbar.php');
 ?>
 
-<style>
+<!-- <style>
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         background: #f9f9f9;
@@ -63,55 +63,76 @@ include('navbar.php');
         border-left: 6px solid #4CAF50;
         border-radius: 8px;
     }
-</style>
+</style> -->
 <div class="container">
-    <h2>Form Input Jabatan</h2>
-    <form method="post" action="">
-        <label for="nama_jabatan">Nama Jabatan:</label>
-        <input type="text" name="nama_jabatan_txt" id="nama_jabatan" required>
-
-        <label for="gaji_pokok">Gaji Pokok:</label>
-        <input type="text" name="gaji_pokok_txt" id="gaji_pokok" required>
-
-        <label for="tunjangan">Tunjangan:</label>
-        <input type="text" name="tunjangan_txt" id="tunjangan" required>
-
-        <input type="submit" value="Kirim Data">
-    </form>
-
-    <?php
-    class Jabatan
-    {
-        var $nama_jabatan;
-        var $gaji_pokok;
-        var $tunjangan;
-
-        public function __construct($nama, $gaji, $tunjangan)
+    <div class="row py-3 px-3 justify-content-center">
+        <div class="col-md-6 mb-5">
+            <div class="card border-radius-default p-0">
+                <div class="card-header bg-green p-3 text-green">
+                    <h5 class="mb-0"><strong>Input Data Jabatan</strong></h5>
+                </div>
+                <form action="jabatan.php" method="POST">
+                    <div class="row p-4">
+                        <div class="col-md-12 mb-3">
+                            <label for="nama_jabatan_txt" class="form-label">Nama Jabatan</label>
+                            <input type="text" class="form-control" name="nama_jabatan_txt" required autofocus>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="gaji_pokok_txt" class="form-label">Gaji Pokok</label>
+                            <input type="text" class="form-control" name="gaji_pokok_txt" required autofocus>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="tunjangan_txt" class="form-label">Tunjangan</label>
+                            <input type="text" class="form-control" name="tunjangan_txt" required autofocus>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success border-radius-default" name="submit">Kirim Data</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <?php
+        class Jabatan
         {
-            $this->nama_jabatan = $nama;
-            $this->gaji_pokok = $gaji;
-            $this->tunjangan = $tunjangan;
+            var $nama_jabatan;
+            var $gaji_pokok;
+            var $tunjangan;
+
+            public function __construct($nama, $gaji, $tunjangan)
+            {
+                $this->nama_jabatan = $nama;
+                $this->gaji_pokok = $gaji;
+                $this->tunjangan = $tunjangan;
+            }
+
+            public function tampil()
+            {
+                echo '
+                <div class="col-md-6">
+                    <div class="card border-radius-default p-0">
+                        <div class="card-header bg-green p-3 text-green">
+                            <h5 class="mb-0"><strong>Total Slip Gaji</strong></h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item p-3"><strong>Nama Jabatan:</strong> ' . $this->nama_jabatan . '</li>
+                            <li class="list-group-item p-3"><strong>Gaji Pokok:</strong> ' . $this->gaji_pokok . '</li>
+                            <li class="list-group-item p-3"><strong>Gaji Pokok:</strong> ' . $this->tunjangan . '</li>
+                        </ul>
+                    </div>
+                </div>';
+            }
         }
 
-        public function tampil()
-        {
-            echo "<div class='result'>";
-            echo "<h3>Data Jabatan:</h3>";
-            echo "Jabatan: <strong>$this->nama_jabatan</strong><br>";
-            echo "Gaji Pokok: <strong>Rp. $this->gaji_pokok</strong><br>";
-            echo "Tunjangan: <strong>Rp. $this->tunjangan</strong><br>";
-            echo "</div>";
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $nama_jabatan = $_POST["nama_jabatan_txt"];
+            $gaji_pokok = $_POST["gaji_pokok_txt"];
+            $tunjangan = $_POST["tunjangan_txt"];
+            $jabatanObj = new Jabatan($nama_jabatan, $gaji_pokok, $tunjangan);
+            $jabatanObj->tampil();
         }
-    }
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $nama_jabatan = $_POST["nama_jabatan_txt"];
-        $gaji_pokok = $_POST["gaji_pokok_txt"];
-        $tunjangan = $_POST["tunjangan_txt"];
-        $jabatanObj = new Jabatan($nama_jabatan, $gaji_pokok, $tunjangan);
-        $jabatanObj->tampil();
-    }
-    ?>
+        ?>
+    </div>
 </div>
 
 <?php
