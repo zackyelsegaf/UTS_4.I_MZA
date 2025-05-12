@@ -1,3 +1,8 @@
+<?php
+    include('header.php');
+    include('navbar.php')
+?>
+
 <form action="tunjangan.php" method="POST">
     Nama: <input type="text" name="nama_txt"><br>
     Jabatan: <input type="text" name="jabatan_txt"><br>
@@ -7,13 +12,6 @@
     Potongan: <input type="number" name="potongan_txt"><br>
     <button type="submit" name="submit">Hitung Gaji</button>
 </form>
-
-<?php
-    include('header.php');
-    include('navbar.php')
-?>
-
-
 
 <?php
 class Gaji {
