@@ -1,8 +1,3 @@
-<?php
-include('header.php');
-include('navbar.php')
-?>
-
 <div class="container">
     <div class="row py-3 px-3 justify-content-center">
         <div class="col-md-6 mb-5">
@@ -44,6 +39,7 @@ include('navbar.php')
             </div>
         </div>
         <?php
+        
         class Pegawai_630 {
             public $nama_630;
             public $jabatan_630;
@@ -53,6 +49,7 @@ include('navbar.php')
                 $this->jabatan_630 = $jabatan_630;
             }
         }
+        
         class Gaji_630 extends Pegawai_630 {
             public $gaji_pokok_630;
             public $tunjangan_630;
@@ -68,17 +65,22 @@ include('navbar.php')
                 $this->tunjangan_630 = $tunjangan630;
                 $this->lembur_630 = $lembur630;
                 $this->potongan_630 = $potongan630;
-                $this->bonus_630 = 100000;
+                $this->bonus_630 = 100000; // tambahan bonus
             }
+           
             protected function hitungBonus_630() {
                 return $this->bonus_630;
             }
+            
             public function hitungLembur_630() {
                 return $this->lembur_630 * self::TARIF_LEMBUR;
             }
+             
             public function totalGaji_630() {
                 return $this->gaji_pokok_630 + $this->tunjangan_630 + $this->hitungLembur_630() + $this->hitungBonus_630() - $this->potongan_630;
             }
+             
+            
             public function tampilkanData_630() {
                 echo '
                 <div class="col-md-6">
@@ -113,12 +115,16 @@ include('navbar.php')
 
             $data_pegawai630 = [];
 
+           
             array_push($data_pegawai630, new Gaji_630("Dummy A", "Manager", 6000000, 1000000, 5, 250000));
             array_push($data_pegawai630, new Gaji_630("Dummy B", "Staff", 4500000, 800000, 2, 150000));
+            
 
+          
             $pegawai_input630 = new Gaji_630($nama630, $jabatan630, $gaji_pokok630, $tunjangan630, $lembur630, $potongan630);
             array_push($data_pegawai630, $pegawai_input630);
              
+           
             foreach ($data_pegawai630 as $pegawai630) {
                 $pegawai630->tampilkanData_630();
             }
@@ -126,7 +132,3 @@ include('navbar.php')
         ?>
     </div>
 </div>
-
-<?php
-include('footer.php');
-?>
