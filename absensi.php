@@ -3,7 +3,7 @@
   include('navbar.php');
 ?>
 
-<style>
+<!-- <style>
   /*/Reset & base/*/
   * {
     box-sizing: border-box;
@@ -130,7 +130,7 @@
       max-width: 100%;
     }
   }
-</style> 
+</style>  -->
 <div class="container">
     <div class="row py-3 px-3 justify-content-center">
         <div class="col-md-6 mb-5">
@@ -138,7 +138,7 @@
                 <div class="card-header bg-green p-3 text-green">
                     <h5 class="mb-0"><strong>Input Data Absensi</strong></h5>
                 </div>
-                <form action="absensi609.php" method="POST">
+                <form action="absensi.php" method="POST">
                     <div class="row p-4">
                         <div class="col-md-12 mb-3">
                             <label for="609_nip" class="form-label">NIP Pegawai</label>
