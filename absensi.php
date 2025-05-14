@@ -215,6 +215,26 @@
                     $this->phone = $phone;
                     $this->email = $email;
                   }
+                  public static $dataAbsensi = []; //menampung data absensi
+
+                  public function simpankeArray()
+                  {
+                    $data = [
+                      "nip"=> $this->nip,
+                      "nama"=> $this->nama,
+                      "tanggal"=> $this->tanggal,
+                      "jam_masuk"=> $this->jamMasuk,
+                      "jam_keluar"=> $this->jamKeluar,
+                      "status"=> $this->status,
+                      "departemen" => $this->departemen,
+                      "position" => $this->position,
+                      "phone" => $this->phone,
+                      "email" => $this->email
+                      
+                    ];
+
+                    array_push(self::$dataAbsensi, $data); //simpan ke array
+                  }
 
                   // method protected untuk menambah data dummy ke array
                   protected function tambahDataDummy(){
@@ -322,14 +342,24 @@
         //contoh objek dummy data tambahan
         $object609 = new Absensi609("123", "Test", "2025-01-01", "08:00", "17:00", "Hadir", "IT", "Admin", "081212", "test@example.com", "A", "B", "C", "D", "E");
         $object609->aksesTambahDataDummy();
+        $absensi->simpankeArray();
         $absensi->tampilExtended(); //tampilkan data dari form
         $absensi->aksesTambahDataDummy(); //tambah dummy ke absensi baru
+        echo '<div class="output"><h4>Data Absensi Tersimpan</h4><ul>';
+        foreach (Absensi::$dataAbsensi as $index => $data){
+          echo "<li><strong>Data ke-".($index+1).":</strong><ul>";
+          foreach ($data as $key => $value) {
+            echo "<li><strong>".ucwords(str_replace("_", " ", $key)).":</strong> ".htmlspecialchars($value)."</li>";
+          }
+          echo "</ul></li>";
+        }
+        echo '</ul></div>';
+
     } catch (Exception $e) {
         echo '<div class="eror-message">'. htmlspecialchars($e->getMessage()) . '</div>';
     }
 }
 ?>
-
 <?php
 include('footer.php');
 ?>
