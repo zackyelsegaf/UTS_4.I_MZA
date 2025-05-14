@@ -1,3 +1,4 @@
+
 <?php
 include('header.php');
 include('navbar.php');
@@ -64,74 +65,120 @@ include('navbar.php');
         border-radius: 8px;
     }
 </style> -->
+
+
+
 <div class="container">
     <div class="row py-3 px-3 justify-content-center">
         <div class="col-md-6 mb-5">
-            <div class="card border-radius-default p-0">
-                <div class="card-header bg-green p-3 text-green">
-                    <h5 class="mb-0"><strong>Input Data Jabatan</strong></h5>
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0"><strong>Form Jabatan 635</strong></h5>
                 </div>
-                <form action="jabatan.php" method="POST">
-                    <div class="row p-4">
-                        <div class="col-md-12 mb-3">
-                            <label for="nama_jabatan_txt" class="form-label">Nama Jabatan</label>
-                            <input type="text" class="form-control" name="nama_jabatan_txt" required autofocus>
+                <form action="" method="POST">
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="nama_jabatan_635" class="form-label">Nama Jabatan</label>
+                            <input type="text" name="nama_jabatan_635" class="form-control" required>
                         </div>
-                        <div class="col-md-12 mb-3">
-                            <label for="gaji_pokok_txt" class="form-label">Gaji Pokok</label>
-                            <input type="text" class="form-control" name="gaji_pokok_txt" required autofocus>
+                        <div class="mb-3">
+                            <label for="gaji_pokok_635" class="form-label">Gaji Pokok</label>
+                            <input type="text" name="gaji_pokok_635" class="form-control" required>
                         </div>
-                        <div class="col-md-12 mb-3">
-                            <label for="tunjangan_txt" class="form-label">Tunjangan</label>
-                            <input type="text" class="form-control" name="tunjangan_txt" required autofocus>
+                        <div class="mb-3">
+                            <label for="tunjangan_635" class="form-label">Tunjangan</label>
+                            <input type="text" name="tunjangan_635" class="form-control" required>
                         </div>
-                        <div class="d-grid">
-                            <button type="submit" class="btn btn-success border-radius-default" name="submit">Kirim Data</button>
+                        <div class="mb-3">
+                            <label for="lembur_635" class="form-label">Lembur</label>
+                            <input type="text" name="lembur_635" class="form-control" required>
                         </div>
+                        <div class="mb-3">
+                            <label for="potongan_635" class="form-label">Potongan</label>
+                            <input type="text" name="potongan_635" class="form-control" required>
+                        </div>
+                        <button type="submit" name="submit" class="btn btn-success w-100">Proses</button>
                     </div>
                 </form>
             </div>
         </div>
-        <?php
-        class Jabatan
-        {
-            var $nama_jabatan;
-            var $gaji_pokok;
-            var $tunjangan;
 
-            public function __construct($nama, $gaji, $tunjangan)
-            {
-                $this->nama_jabatan = $nama;
-                $this->gaji_pokok = $gaji;
-                $this->tunjangan = $tunjangan;
-            }
+<?php
+// Parent class
+class Jabatan635 {
+    protected $nama_jabatan_635;
+    protected $gaji_pokok_635;
+    protected $tunjangan_635;
+    protected $lembur_635;
+    protected $potongan_635;
 
-            public function tampil()
-            {
-                echo '
-                <div class="col-md-6">
-                    <div class="card border-radius-default p-0">
-                        <div class="card-header bg-green p-3 text-green">
-                            <h5 class="mb-0"><strong>Total Slip Gaji</strong></h5>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item p-3"><strong>Nama Jabatan:</strong> ' . $this->nama_jabatan . '</li>
-                            <li class="list-group-item p-3"><strong>Gaji Pokok:</strong> ' . $this->gaji_pokok . '</li>
-                            <li class="list-group-item border-radius-default p-3"><strong>Gaji Pokok:</strong> ' . $this->tunjangan . '</li>
-                        </ul>
-                    </div>
-                </div>';
-            }
+    public function __construct($nama, $gaji, $tunj, $lembur, $potongan) {
+        $this->nama_jabatan_635 = $nama;
+        $this->gaji_pokok_635 = $gaji;
+        $this->tunjangan_635 = $tunj;
+        $this->lembur_635 = $lembur;
+        $this->potongan_635 = $potongan;
+    }
+}
+
+// Child class
+class SlipGaji635 extends Jabatan635 {
+    public static $data_array = [];
+
+    public function tampilkanSlip() {
+        $total = $this->gaji_pokok_635 + $this->tunjangan_635 + $this->lembur_635 - $this->potongan_635;
+        echo '
+        <div class="col-md-6">
+            <div class="card mt-3">
+                <div class="card-header bg-green p-3 text-white">
+                    <h5 class="mb-0"><strong>Form Jabatan 635</strong></h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Nama Jabatan: ' . $this->nama_jabatan_635 . '</li>
+                    <li class="list-group-item">Gaji Pokok: Rp. ' . number_format($this->gaji_pokok_635) . '</li>
+                    <li class="list-group-item">Tunjangan: Rp. ' . number_format($this->tunjangan_635) . '</li>
+                    <li class="list-group-item">Lembur: Rp. ' . number_format($this->lembur_635) . '</li>
+                    <li class="list-group-item">Potongan: Rp. ' . number_format($this->potongan_635) . '</li>
+                    <li class="list-group-item"><strong>Total Gaji: Rp. ' . number_format($total) . '</strong></li>
+                </ul>
+            </div>
+        </div>';
+    }
+
+    public static function tambahData($objek) {
+        array_push(self::$data_array, $objek);
+    }
+
+    public static function tampilkanDataArray() {
+        foreach (self::$data_array as $item) {
+            $item->tampilkanSlip();
         }
+    }
+}
 
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $nama_jabatan = $_POST["nama_jabatan_txt"];
-            $gaji_pokok = $_POST["gaji_pokok_txt"];
-            $tunjangan = $_POST["tunjangan_txt"];
-            $jabatanObj = new Jabatan($nama_jabatan, $gaji_pokok, $tunjangan);
-            $jabatanObj->tampil();
-        }
-        ?>
+// Handle submit
+if (isset($_POST['submit'])) {
+    $obj635 = new SlipGaji635(
+        $_POST['nama_jabatan_635'],
+        $_POST['gaji_pokok_635'],
+        $_POST['tunjangan_635'],
+        $_POST['lembur_635'],
+        $_POST['potongan_635']
+    );
+
+    SlipGaji635::tambahData($obj635);
+}
+
+// Tambahkan data dummy
+$data_dummy1 = new SlipGaji635("Supervisor", 5000000, 1000000, 500000, 250000);
+$data_dummy2 = new SlipGaji635("Staff", 3000000, 800000, 300000, 100000);
+SlipGaji635::tambahData($data_dummy1);
+SlipGaji635::tambahData($data_dummy2);
+
+// Tampilkan semua data
+SlipGaji635::tampilkanDataArray();
+?>
+
     </div>
 </div>
 
