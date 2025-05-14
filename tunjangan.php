@@ -113,11 +113,9 @@ include('navbar.php')
 
             $data_pegawai630 = [];
 
-            array_push($data_pegawai630, new Gaji_630("Dani", "Manager", 6000000, 1000000, 5, 250000));
-            array_push($data_pegawai630, new Gaji_630("Dina", "Staff", 4500000, 800000, 2, 150000));
-            array_push($data_pegawai630, new Gaji_630("Cantika", "Akuntan", 5000000, 700000, 8, 250000));
-            array_push($data_pegawai630, new Gaji_630("Lidya", "PR", 5500000, 100000, 4, 100000));
-            array_push($data_pegawai630, new Gaji_630("Fanny", "Staff", 4500000, 2500000, 3, 100000));
+            array_push($data_pegawai630, new Gaji_630("Dummy A", "Manager", 6000000, 1000000, 5, 250000));
+            array_push($data_pegawai630, new Gaji_630("Dummy B", "Staff", 4500000, 800000, 2, 150000));
+            
 
             $pegawai_input630 = new Gaji_630($nama630, $jabatan630, $gaji_pokok630, $tunjangan630, $lembur630, $potongan630);
             array_push($data_pegawai630, $pegawai_input630);
