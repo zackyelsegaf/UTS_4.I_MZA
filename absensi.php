@@ -3,7 +3,7 @@
   include('navbar.php');
 ?>
 
-<!-- <style>
+<style>
   /*/Reset & base/*/
   * {
     box-sizing: border-box;
@@ -13,9 +13,9 @@
   }
 
   body {
-    background: linier-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+    background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
     color: #222;
-    min-height: 100hv;
+    min-height: 100vh;
     align-items: center;
     justify-content: center;
     padding: 10px;
@@ -130,7 +130,7 @@
       max-width: 100%;
     }
   }
-</style>  -->
+</style> 
 <div class="container">
     <div class="row py-3 px-3 justify-content-center">
         <div class="col-md-6 mb-5">
@@ -138,7 +138,7 @@
                 <div class="card-header bg-green p-3 text-green">
                     <h5 class="mb-0"><strong>Input Data Absensi</strong></h5>
                 </div>
-                <form action="absensi.php" method="POST">
+                <form action="absensi609.php" method="POST">
                     <div class="row p-4">
                         <div class="col-md-12 mb-3">
                             <label for="609_nip" class="form-label">NIP Pegawai</label>
@@ -269,8 +269,8 @@
         // method untuk menampilkan data absensi utama
         public function tampil()
           {
-            echo '
-                <div class="col-md-6">
+            echo '<div class="row justify-content-center mb-4";
+              <div class="col-md-6">
                     <div class="card border-radius-default p-0">
                         <div class="card-header bg-green p-3 text-green">
                             <h5 class="mb-0"><strong>Data Absensi - ' . htmlspecialchars($this->nama) . ' </strong></h5>
@@ -288,6 +288,8 @@
                             <li class="list-group-item p-3"><strong>Email:</strong> ' . htmlspecialchars($this->email) . '</li>
                         </ul>
                     </div>
+                </div>';
+              '</div>
                 </div>';
           }
         }
