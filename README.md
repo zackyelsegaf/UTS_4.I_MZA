@@ -9,10 +9,10 @@ Dosen Pengampu:
 # Robi Wariyanto Abdullah
 
 # Login:
-## When admin is:
-Username: admin
-Password: admin123
+1. When admin is:
+- Username: admin
+- Password: admin123
 
-When employee is:
-Username: pegawai
-Password: pegawai456
+2. When employee is:
+- Username: pegawai
+- Password: pegawai456
