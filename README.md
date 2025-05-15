@@ -10,9 +10,9 @@ Dosen Pengampu:
 
 # Login:
 1. When admin is:
-- # Username: admin
-- # Password: admin123
+- Username: admin
+- Password: admin123
 
 2. When employee is:
-- # Username: pegawai
-- # Password: pegawai456
+- Username: pegawai
+- Password: pegawai456
