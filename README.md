@@ -6,7 +6,7 @@ Anggota:
 4. Lifia Anggraini
 
 # Link GitHub:
-- github.com/zackyelsegaf/UTS_4.I_MZA
+- https://github.com/zackyelsegaf/UTS_4.I_MZA
 
 Dosen Pengampu:
 # Robi Wariyanto Abdullah
