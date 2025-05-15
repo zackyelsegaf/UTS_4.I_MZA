@@ -4,9 +4,6 @@
     <a class="navbar-brand text-green" href="#"><strong>Administrasi Kepegawaian</strong></a>
     <ul class="nav nav-pills">
         <li class="nav-item">
-            <a class="nav-link text-green <?= ($page == 'index.php') ? 'active' : '' ?>" href="index.php"><i class="fa-solid fa-gauge">&nbsp;&nbsp;&nbsp;</i>Dashboard</a>
-        </li>
-        <li class="nav-item">
             <a class="nav-link text-green <?= ($page == 'pegawai.php') ? 'active' : '' ?>" href="pegawai.php"><i class="fa-solid fa-users">&nbsp;&nbsp;&nbsp;</i>Pegawai</a>
         </li>
         <li class="nav-item">

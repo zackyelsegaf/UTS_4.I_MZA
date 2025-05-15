@@ -60,7 +60,7 @@ class LoginUser extends User
     {
         if ($this->cekLogin()) {
             $_SESSION['user'] = $this->username;
-            header("Location: index.php");
+            header("Location: pegawai.php");
             exit;
         } else {
             echo "<script>alert('Username atau password salah'); window.location='login.php';</script>";
