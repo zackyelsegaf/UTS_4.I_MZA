@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 include('header.php');
 include('navbar.php');
@@ -128,22 +127,15 @@ include('navbar.php');
             $pegawai_input630 = new Gaji_630($nama630, $jabatan630, $gaji_pokok_630, $tunjangan630, $lembur630, $potongan630);
             array_push($data_pegawai630, $pegawai_input630);
 
-            $_SESSION['data_pegawai630'] = $data_pegawai630;
-
-           
+          foreach ($data_pegawai630 as $pegawai630) {
+                $pegawai630->tampilkanData_630();
+            }
             }
         }
         ?>
     </div>
 </div>
-<!-- Tempatkan kode session output di sini -->
-<?php if (isset($_SESSION['data_pegawai630'])): ?>
-    <div class="row py-3 px-3 justify-content-center">
-        <?php foreach ($_SESSION['data_pegawai630'] as $pegawai630): ?>
-            <?php $pegawai630->tampilkanData_630(); ?>
-        <?php endforeach; ?>
-    </div>
-<?php endif; ?>
+
 
 <?php
 include('footer.php');
