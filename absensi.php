@@ -1,6 +1,6 @@
 <?php
-  include('header.php');
-  include('navbar.php');
+include('header.php');
+include('navbar.php');
 ?>
 
 <!-- <style>
@@ -132,174 +132,170 @@
   }
 </style>  -->
 <div class="container">
-    <div class="row py-3 px-3 justify-content-center">
-        <div class="col-md-6 mb-2">
-            <div class="card bg-green border-radius-default p-4">
-                <h4 class="text-center text-green mb-3"><i class="fa-solid fa-signature"></i>&nbsp;&nbsp;&nbsp;Putri Buana Della Puspita - <strong>Absensi</strong></h4>
-                <marquee direction="right" scrollamount="10">
-                <div class="row col-md-12">
-                    <div class="col-md-4">
-                        <h6 class="text-center text-green"><i class="fa-solid fa-address-card"></i>&nbsp;&nbsp;&nbsp;2313010609</h6>
-                    </div>
-                    <div class="col-md-4">
-                        <h6 class="text-center text-green"><i class="fa-solid fa-graduation-cap"></i>&nbsp;&nbsp;&nbsp;4.I Class</h6>
-                    </div>
-                    <div class="col-md-4">
-                        <h6 class="text-center text-green"><i class="fa-solid fa-book"></i>&nbsp;&nbsp;&nbsp;Pemrograman Web</h6>
-                    </div>
-                </div>
-                </marquee>
+  <div class="row py-3 px-3 justify-content-center">
+    <div class="col-md-6 mb-2">
+      <div class="card bg-green border-radius-default p-4">
+        <h4 class="text-center text-green mb-3"><i class="fa-solid fa-signature"></i>&nbsp;&nbsp;&nbsp;Putri Buana Della Puspita - <strong>Absensi</strong></h4>
+        <marquee direction="right" scrollamount="10">
+          <div class="row col-md-12">
+            <div class="col-md-4">
+              <h6 class="text-center text-green"><i class="fa-solid fa-address-card"></i>&nbsp;&nbsp;&nbsp;2313010609</h6>
             </div>
-        </div>
+            <div class="col-md-4">
+              <h6 class="text-center text-green"><i class="fa-solid fa-graduation-cap"></i>&nbsp;&nbsp;&nbsp;4.I Class</h6>
+            </div>
+            <div class="col-md-4">
+              <h6 class="text-center text-green"><i class="fa-solid fa-book"></i>&nbsp;&nbsp;&nbsp;Pemrograman Web</h6>
+            </div>
+          </div>
+        </marquee>
+      </div>
     </div>
+  </div>
 </div>
 <div class="container">
-    <div class="row py-3 px-3 justify-content-center">
-        <div class="col-md-6 mb-5">
-            <div class="card border-radius-default p-0">
-                <div class="card-header bg-green p-3 text-green">
-                    <h5 class="mb-0"><strong>Input Data Absensi</strong></h5>
-                </div>
-                <form action="absensi.php" method="POST">
-                    <div class="row p-4">
-                        <div class="col-md-12 mb-3">
-                            <label for="609_nip" class="form-label">NIP Pegawai</label>
-                            <input type="text" class="form-control" name="609_nip" required autofocus>
-                        </div>
-                        <div class="col-md-12 mb-3">
-                            <label for="609_nama" class="form-label">Nama Pegawai</label>
-                            <input type="text" class="form-control" name="609_nama" required autofocus>
-                        </div>
-                        <div class="col-md-12 mb-3">
-                            <label for="609_tanggal" class="form-label">Tanggal Absen</label>
-                            <input type="date" class="form-control" name="609_tanggal" required autofocus>
-                        </div>
-                        <div class="col-md-12 mb-3">
-                            <label for="609_jam_masuk" class="form-label">Jam Masuk</label>
-                            <input type="time" class="form-control" name="609_jam_masuk" required autofocus>
-                        </div>
-                        <div class="col-md-12 mb-3">
-                            <label for="609_jam_keluar" class="form-label">Jam Keluar</label>
-                            <input type="time" class="form-control" name="609_jam_keluar" required autofocus>
-                        </div>
-                        <div class="col-md-12 mb-3">
-                            <label for="609_status" class="form-label">Status Kehadiran</label>
-                            <select class="form-select" name="609_status">
-                                <option value="Hadir">Hadir</option>
-                                <option value="Izin">Izin</option>
-                                <option value="Sakit">Sakit</option>
-                                <option value="Alpha">Alpha</option>
-                            </select>                        
-                        </div>
-
-                        <div class="col-md-12 mb-3">
-                            <label for="609_departemen" class="form-label">Departemen</label>
-                            <input type="text" class="form-control" name="609_departemen" required autofocus>
-                        </div>
-                        <div class="col-md-12 mb-3">
-                            <label for="609_position" class="form-label">Jabatan</label>
-                            <input type="text" class="form-control" name="609_position" required autofocus>
-                        </div>
-                        <div class="col-md-12 mb-3">
-                            <label for="609_phone" class="form-label">No. Telepon</label>
-                            <input type="text" class="form-control" name="609_phone" required autofocus>
-                        </div>
-                        <div class="col-md-12 mb-3">
-                            <label for="609_email" class="form-label">Email</label>
-                            <input type="text" class="form-control" name="609_email" required autofocus>
-                        </div>
-                        <div class="d-grid">
-                            <button type="submit" class="btn btn-success border-radius-default" name="submit">Kirim Data</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
+  <div class="row py-3 px-3 justify-content-center">
+    <div class="col-md-6 mb-5">
+      <div class="card border-radius-default p-0">
+        <div class="card-header bg-green p-3 text-green">
+          <h5 class="mb-0"><strong>Input Data Absensi</strong></h5>
         </div>
+        <form action="absensi.php" method="POST">
+          <div class="row p-4">
+            <div class="col-md-12 mb-3">
+              <label for="609_nip" class="form-label">NIP Pegawai</label>
+              <input type="text" class="form-control" name="609_nip" required autofocus>
+            </div>
+            <div class="col-md-12 mb-3">
+              <label for="609_nama" class="form-label">Nama Pegawai</label>
+              <input type="text" class="form-control" name="609_nama" required autofocus>
+            </div>
+            <div class="col-md-12 mb-3">
+              <label for="609_tanggal" class="form-label">Tanggal Absen</label>
+              <input type="date" class="form-control" name="609_tanggal" required autofocus>
+            </div>
+            <div class="col-md-12 mb-3">
+              <label for="609_jam_masuk" class="form-label">Jam Masuk</label>
+              <input type="time" class="form-control" name="609_jam_masuk" required autofocus>
+            </div>
+            <div class="col-md-12 mb-3">
+              <label for="609_jam_keluar" class="form-label">Jam Keluar</label>
+              <input type="time" class="form-control" name="609_jam_keluar" required autofocus>
+            </div>
+            <div class="col-md-12 mb-3">
+              <label for="609_status" class="form-label">Status Kehadiran</label>
+              <select class="form-select" name="609_status">
+                <option value="Hadir">Hadir</option>
+                <option value="Izin">Izin</option>
+                <option value="Sakit">Sakit</option>
+                <option value="Alpha">Alpha</option>
+              </select>
+            </div>
 
-        <?php
-        if ($_SERVER["REQUEST_METHOD"]== "POST"){
-            //kelas Absensi induk
-            class Absensi {
-              //properti data absensi utama
-                public $nip, $nama, $tanggal, $jamMasuk, $jamKeluar, $status, $departemen, $position, $phone, $email;
-              //array data dummy
-                protected $dataDummy = [];
+            <div class="col-md-12 mb-3">
+              <label for="609_departemen" class="form-label">Departemen</label>
+              <input type="text" class="form-control" name="609_departemen" required autofocus>
+            </div>
+            <div class="col-md-12 mb-3">
+              <label for="609_position" class="form-label">Jabatan</label>
+              <input type="text" class="form-control" name="609_position" required autofocus>
+            </div>
+            <div class="col-md-12 mb-3">
+              <label for="609_phone" class="form-label">No. Telepon</label>
+              <input type="text" class="form-control" name="609_phone" required autofocus>
+            </div>
+            <div class="col-md-12 mb-3">
+              <label for="609_email" class="form-label">Email</label>
+              <input type="text" class="form-control" name="609_email" required autofocus>
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-success border-radius-default" name="submit">Kirim Data</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
 
-                public function __construct($nip, $nama, $tanggal, $jam_masuk, $jam_keluar, $status, $departemen, $position, $phone, $email){
-                    $this->nip = $nip;
-                    $this->nama = $nama;
-                    $this->tanggal = $tanggal;
-                    $this->jamMasuk = $jam_masuk;
-                    $this->jamKeluar = $jam_keluar;
-                    $this->status = $status;
-                    $this->departemen = $departemen;
-                    $this->position = $position;
-                    $this->phone = $phone;
-                    $this->email = $email;
-                  }
-                  public static $dataAbsensi = []; //menampung data absensi
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      class Absensi
+      {
+        public $nip, $nama, $tanggal, $jamMasuk, $jamKeluar, $status, $departemen, $position, $phone, $email;
+        protected $dataDummy = [];
+        public function __construct($nip, $nama, $tanggal, $jam_masuk, $jam_keluar, $status, $departemen, $position, $phone, $email)
+        {
+          $this->nip = $nip;
+          $this->nama = $nama;
+          $this->tanggal = $tanggal;
+          $this->jamMasuk = $jam_masuk;
+          $this->jamKeluar = $jam_keluar;
+          $this->status = $status;
+          $this->departemen = $departemen;
+          $this->position = $position;
+          $this->phone = $phone;
+          $this->email = $email;
+        }
+        public static $dataAbsensi = [];
 
-                  public function simpankeArray()
-                  {
-                    $data = [
-                      "nip"=> $this->nip,
-                      "nama"=> $this->nama,
-                      "tanggal"=> $this->tanggal,
-                      "jam_masuk"=> $this->jamMasuk,
-                      "jam_keluar"=> $this->jamKeluar,
-                      "status"=> $this->status,
-                      "departemen" => $this->departemen,
-                      "position" => $this->position,
-                      "phone" => $this->phone,
-                      "email" => $this->email
-                      
-                    ];
+        public function simpankeArray()
+        {
+          $data = [
+            "nip" => $this->nip,
+            "nama" => $this->nama,
+            "tanggal" => $this->tanggal,
+            "jam_masuk" => $this->jamMasuk,
+            "jam_keluar" => $this->jamKeluar,
+            "status" => $this->status,
+            "departemen" => $this->departemen,
+            "position" => $this->position,
+            "phone" => $this->phone,
+            "email" => $this->email
 
-                    array_push(self::$dataAbsensi, $data); //simpan ke array
-                  }
+          ];
 
-                  // method protected untuk menambah data dummy ke array
-                  protected function tambahDataDummy(){
-                    $dummy = [
-                        "nip" => "112233",
-                        "nama" => "Della",
-                        "tanggal" => date("Y-m-d"),
-                        "jam_masuk" => "08:00",
-                        "jam_keluar" => "17:00",
-                        "status" => "Hadir",
-                        "departemen" => "IT",
-                        "position" => "Manager",
-                        "phone" => "081682013",
-                        "email" => "@putdell.com"
-    
-                    ];
-                    array_push($this->dataDummy, $dummy);
-            }
+          array_push(self::$dataAbsensi, $data);
+        }
 
-            //method publik untuk akses dan tampilan data dummy
-            public function aksesTambahDataDummy() {
-                $this->tambahDataDummy();
-                echo '<div class="col-md-6">
+        protected function tambahDataDummy()
+        {
+          $dummy = [
+            "nip" => "112233",
+            "nama" => "Della",
+            "tanggal" => date("Y-m-d"),
+            "jam_masuk" => "08:00",
+            "jam_keluar" => "17:00",
+            "status" => "Hadir",
+            "departemen" => "IT",
+            "position" => "Manager",
+            "phone" => "081682013",
+            "email" => "@putdell.com"
+
+          ];
+          array_push($this->dataDummy, $dummy);
+        }
+
+        public function aksesTambahDataDummy()
+        {
+          $this->tambahDataDummy();
+          echo '<div class="col-md-6">
                           <div class="card border-radius-default p-0">
                               <div class="card-header bg-green p-3 text-green">
                                   <h5 class="mb-0"><strong>Data Dummy Berhasil Ditambahkan</strong></h5>
                               </div>
                               <ul class="list-group list-group-flush">';
-                  foreach ($this->dataDummy as $data) {
-                      foreach ($data as $key => $value) {
-                          echo '<li class="list-group-item border-radius-default p-3"><strong>' . ucwords(str_replace("_", " ", $key)) . ':</strong> ' . htmlspecialchars($value) . '</li>';
-                      }
-                  }
-                  echo '      </ul>
+          foreach ($this->dataDummy as $data) {
+            foreach ($data as $key => $value) {
+              echo '<li class="list-group-item border-radius-default p-3"><strong>' . ucwords(str_replace("_", " ", $key)) . ':</strong> ' . htmlspecialchars($value) . '</li>';
+            }
+          }
+          echo '      </ul>
                           </div>
                       </div>';
+        }
 
-            }
-          
-        // method untuk menampilkan data absensi utama
         public function tampil()
-          {
-            echo '
+        {
+          echo '
                 <div class="col-md-6 mb-5">
                     <div class="card border-radius-default p-0">
                         <div class="card-header bg-green p-3 text-green">
@@ -319,28 +315,27 @@
                         </ul>
                     </div>
                 </div>';
-          }
         }
+      }
 
-        //kelas turunan Absensi dengan tambahan properti
-        class Absensi609 extends Absensi{
-            public $prop609_1, $prop609_2, $prop609_3, $prop609_4, $prop609_5;
-
-            //konstruktor yang memanggil parent dan tambahan properti
-            public function __construct($nip, $nama, $tanggal, $jam_masuk, $jam_keluar, $status, $departemen , $position, $phone, $email, $p1, $p2, $p3, $p4, $p5){
-                parent::__construct($nip, $nama, $tanggal, $jam_masuk, $jam_keluar, $status, $departemen, $position, $phone, $email);
-                $this->prop609_1 = $p1;
-                $this->prop609_2 = $p2;
-                $this->prop609_3 = $p3;
-                $this->prop609_4 = $p4;
-                $this->prop609_5 = $p5;
-            }
-
-            //tampilkan semua data termasuk properti tambahan 
-            public function tampilExtended()
-            {
-                $this->tampil();
-                echo '<div class="col-md-6 mb-5">
+      //kelas turunan Absensi dengan tambahan properti
+      class Absensi609 extends Absensi
+      {
+        public $prop609_1, $prop609_2, $prop609_3, $prop609_4, $prop609_5;
+        public function __construct($nip, $nama, $tanggal, $jam_masuk, $jam_keluar, $status, $departemen, $position, $phone, $email, $p1, $p2, $p3, $p4, $p5)
+        {
+          parent::__construct($nip, $nama, $tanggal, $jam_masuk, $jam_keluar, $status, $departemen, $position, $phone, $email);
+          $this->prop609_1 = $p1;
+          $this->prop609_2 = $p2;
+          $this->prop609_3 = $p3;
+          $this->prop609_4 = $p4;
+          $this->prop609_5 = $p5;
+        }
+ 
+        public function tampilExtended()
+        {
+          $this->tampil();
+          echo '<div class="col-md-6 mb-5">
                           <div class="card border-radius-default p-0">
                               <div class="card-header bg-green p-3 text-green">
                                   <h5 class="mb-0"><strong>Properti 609 Tambahan</strong></h5>
@@ -354,35 +349,30 @@
                               </ul>
                           </div>
                       </div>';
-
-            }
         }
-        
-    try {
-      //properti tambahan dummy(untuk absensi609)
+      }
+
+      try {
         $extraProps = ["Extra1", "Extra2", "Extra3", "Extra4", "Extra5"];
-    
-        //buat objek absensi609
         $absensi = new Absensi609(
-            $nip = $_POST["609_nip"],
-            $nama = $_POST["609_nama"],
-            $tanggal_absen = $_POST["609_tanggal"],
-            $jamMasuk = $_POST["609_jam_masuk"],
-            $jamKeluar = $_POST["609_jam_keluar"],
-            $status_absen = $_POST["609_status"],
-            $departemen = $_POST["609_departemen"],
-            $position = $_POST["609_position"],
-            $phone = $_POST["609_phone"],
-            $email = $_POST["609_email"],
-            ...$extraProps
+          $nip = $_POST["609_nip"],
+          $nama = $_POST["609_nama"],
+          $tanggal_absen = $_POST["609_tanggal"],
+          $jamMasuk = $_POST["609_jam_masuk"],
+          $jamKeluar = $_POST["609_jam_keluar"],
+          $status_absen = $_POST["609_status"],
+          $departemen = $_POST["609_departemen"],
+          $position = $_POST["609_position"],
+          $phone = $_POST["609_phone"],
+          $email = $_POST["609_email"],
+          ...$extraProps
         );
 
-        //contoh objek dummy data tambahan
         $object609 = new Absensi609("123", "Test", "2025-01-01", "08:00", "17:00", "Hadir", "IT", "Admin", "081212", "test@example.com", "A", "B", "C", "D", "E");
         $object609->aksesTambahDataDummy();
         $absensi->simpankeArray();
-        $absensi->tampilExtended(); //tampilkan data dari form
-        $absensi->aksesTambahDataDummy(); //tambah dummy ke absensi baru
+        $absensi->tampilExtended();
+        $absensi->aksesTambahDataDummy();
         echo '
         <div class="col-md-6 mb-5">
             <div class="card border-radius-default p-0">
@@ -390,22 +380,20 @@
                     <h5 class="mb-0"><strong>Data Absensi Tersimpan</strong></h5>
                 </div>
             <ul class="list-group list-group-flush">';
-                foreach (Absensi::$dataAbsensi as $index => $data) {
-                    echo '<li class="list-group-item p-3">Data ke-' . ($index + 1);
-                    foreach ($data as $key => $value) {
-                        echo '<li class="list-group-item border-radius-default p-3" ><strong>' . ucwords(str_replace("_", " ", $key)) . ':</strong> ' . htmlspecialchars($value) . '</li>';
-                    }
-                }
-                echo '      </ul>
+        foreach (Absensi::$dataAbsensi as $index => $data) {
+          echo '<li class="list-group-item p-3">Data ke-' . ($index + 1);
+          foreach ($data as $key => $value) {
+            echo '<li class="list-group-item border-radius-default p-3" ><strong>' . ucwords(str_replace("_", " ", $key)) . ':</strong> ' . htmlspecialchars($value) . '</li>';
+          }
+        }
+        echo '      </ul>
                         </div>
                     </div>';
-
-
-    } catch (Exception $e) {
-        echo '<div class="eror-message">'. htmlspecialchars($e->getMessage()) . '</div>';
+      } catch (Exception $e) {
+        echo '<div class="eror-message">' . htmlspecialchars($e->getMessage()) . '</div>';
+      }
     }
-}
-?>
-<?php
-include('footer.php');
-?>
+    ?>
+    <?php
+    include('footer.php');
+    ?>
