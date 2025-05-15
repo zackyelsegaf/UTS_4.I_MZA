@@ -66,7 +66,28 @@ include('navbar.php');
 </style> -->
 
 
-
+<div class="container">
+    <div class="row py-3 px-3 justify-content-center">
+        <div class="col-md-6 mb-2">
+            <div class="card bg-green border-radius-default p-4">
+                <h4 class="text-center text-green mb-3"><i class="fa-solid fa-signature"></i>&nbsp;&nbsp;&nbsp;Fathya Khoirunnisa - <strong>Jabatan</strong></h4>
+                <marquee direction="right" scrollamount="10">
+                <div class="row col-md-12">
+                    <div class="col-md-4">
+                        <h6 class="text-center text-green"><i class="fa-solid fa-address-card"></i>&nbsp;&nbsp;&nbsp;2313010635</h6>
+                    </div>
+                    <div class="col-md-4">
+                        <h6 class="text-center text-green"><i class="fa-solid fa-graduation-cap"></i>&nbsp;&nbsp;&nbsp;4.I Class</h6>
+                    </div>
+                    <div class="col-md-4">
+                        <h6 class="text-center text-green"><i class="fa-solid fa-book"></i>&nbsp;&nbsp;&nbsp;Pemrograman Web</h6>
+                    </div>
+                </div>
+                </marquee>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container">
     <div class="row py-3 px-3 justify-content-center">
         <div class="col-md-6 mb-5">

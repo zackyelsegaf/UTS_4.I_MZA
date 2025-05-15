@@ -2,7 +2,28 @@
 include('header.php');
 include('navbar.php')
 ?>
-
+<div class="container">
+    <div class="row py-3 px-3 justify-content-center">
+        <div class="col-md-6 mb-2">
+            <div class="card bg-green border-radius-default p-4">
+                <h4 class="text-center text-green mb-3"><i class="fa-solid fa-signature"></i>&nbsp;&nbsp;&nbsp;Muhammad Zacky Abdullah - <strong>Pegawai</strong></h4>
+                <marquee direction="right" scrollamount="10">
+                <div class="row col-lg-12">
+                    <div class="col-md-4">
+                        <h6 class="text-center text-green"><i class="fa-solid fa-address-card"></i>&nbsp;&nbsp;&nbsp;2313010655</h6>
+                    </div>
+                    <div class="col-md-4">
+                        <h6 class="text-center text-green"><i class="fa-solid fa-graduation-cap"></i>&nbsp;&nbsp;&nbsp;4.I Class</h6>
+                    </div>
+                    <div class="col-md-4">
+                        <h6 class="text-center text-green"><i class="fa-solid fa-book"></i>&nbsp;&nbsp;&nbsp;Pemrograman Web</h6>
+                    </div>
+                </div>
+                </marquee>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container">
     <div class="row py-3 px-3 justify-content-center">
         <div class="col-md-6 mb-5">
@@ -152,7 +173,7 @@ include('navbar.php')
             }
 
             protected function tampilData()
-            {   
+            {
                 echo '
                 <div class="col-md-6 mb-5">
                     <div class="card border-radius-default p-0">
@@ -162,7 +183,7 @@ include('navbar.php')
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item p-3"><strong>No. Pegawai            :</strong> ' . $this->no_pegawai_655 . '</li>
                             <li class="list-group-item p-3"><strong>NIK Pegawai            :</strong> ' . $this->nik_pegawai_655 . '</li>
-                            <li class="list-group-item p-3"><strong>Nama Lengkap Pegawai   :</strong> ' . $this->nama_depan_pegawai_655 . ' ' . $this->nama_belakang_pegawai_655 .'</li>
+                            <li class="list-group-item p-3"><strong>Nama Lengkap Pegawai   :</strong> ' . $this->nama_depan_pegawai_655 . ' ' . $this->nama_belakang_pegawai_655 . '</li>
                             <li class="list-group-item p-3"><strong>Nomor Telepon Pegawai  :</strong> ' . $this->no_pegawai_655 . '</li>
                             <li class="list-group-item p-3"><strong>Tanggal Lahir Pegawai  :</strong> ' . $this->tanggal_lahir_655 . '</li>
                             <li class="list-group-item p-3"><strong>Tempat Lahir Pegawai   :</strong> ' . $this->tempat_lahir_655 . '</li>
@@ -213,7 +234,7 @@ include('navbar.php')
             $link_cv_655 = $_POST["link_cv_655"];
 
             $array_pegawai_655 = [];
-            array_push($array_pegawai_655, new DataPegawai655("PG001", "1234567890", "Budi", "Santoso", "081234567890", "1990-01-01", "Yogyakarta", "2023-01-01", "Online", "Cabang 1", "Programmer", "Full Time - Tetap", "Programmer - Fullstack", "https://drive.google.com/file/d/xxx1")); 
+            array_push($array_pegawai_655, new DataPegawai655("PG001", "1234567890", "Budi", "Santoso", "081234567890", "1990-01-01", "Yogyakarta", "2023-01-01", "Online", "Cabang 1", "Programmer", "Full Time - Tetap", "Programmer - Fullstack", "https://drive.google.com/file/d/xxx1"));
             array_push($array_pegawai_655, new DataPegawai655("PG001", "1234567890", "Budi", "Santoso", "081234567890", "1990-01-01", "Yogyakarta", "2023-01-01", "Online", "Cabang 1", "Programmer", "Full Time - Tetap", "Programmer - Fullstack", "https://drive.google.com/file/d/xxx1"));
             array_push($array_pegawai_655, new DataPegawai655("PG002", "9876543210", "Sari", "Rahma", "082345678901", "1992-02-02", "Surabaya", "2022-12-01", "Offline", "Cabang 2", "Finance", "Part Time", "Staff Administrasi Keuangan", "https://drive.google.com/file/d/xxx2"));
             array_push($array_pegawai_655, new DataPegawai655("PG003", "1122334455", "Dewi", "Anggraini", "083456789012", "1993-03-03", "Magelang", "2023-02-01", "Online", "Cabang 3", "Marketing", "Magang", "Content - Marketing", "https://drive.google.com/file/d/xxx3"));
@@ -232,15 +253,15 @@ include('navbar.php')
             array_push($array_pegawai_655, new DataPegawai655("PG016", "1415161718", "Hendra", "Kurniawan", "087788990011", "1993-04-16", "Banjarmasin", "2020-12-01", "Online", "Cabang 1", "HRD", "Part Time", "Training Specialist", "https://drive.google.com/file/d/xxx16"));
             array_push($array_pegawai_655, new DataPegawai655("PG017", "1516171819", "Mega", "Safitri", "088899001122", "1990-05-17", "Padang", "2023-08-08", "Offline", "Cabang 2", "IT", "Full Time - Tetap", "Frontend Developer", "https://drive.google.com/file/d/xxx17"));
             array_push($array_pegawai_655, new DataPegawai655("PG018", "1617181920", "Bayu", "Nugroho", "089900112233", "1992-06-18", "Cirebon", "2022-09-09", "Online", "Cabang 3", "Support", "Kontrak", "Technical Support", "https://drive.google.com/file/d/xxx18"));
-        
 
-        $array_store_pegawai_655 = new DataPegawai655($no_pegawai_655, $nik_pegawai_655, $nama_depan_pegawai_655, $nama_belakang_pegawai_655, $nomor_telepon_655, $tanggal_lahir_655, $tempat_lahir_655, $tanggal_rekrut_655, $sistem_rekrut_655, $lokasi_kerja_655, $divisi_pegawai_655, $status_pegawai_655, $posisi_pegawai_655, $link_cv_655);
-        array_push($array_pegawai_655, $array_store_pegawai_655);
 
-        foreach ($array_pegawai_655 as $employees) {
-            $employees->tampilkan();
+            $array_store_pegawai_655 = new DataPegawai655($no_pegawai_655, $nik_pegawai_655, $nama_depan_pegawai_655, $nama_belakang_pegawai_655, $nomor_telepon_655, $tanggal_lahir_655, $tempat_lahir_655, $tanggal_rekrut_655, $sistem_rekrut_655, $lokasi_kerja_655, $divisi_pegawai_655, $status_pegawai_655, $posisi_pegawai_655, $link_cv_655);
+            array_push($array_pegawai_655, $array_store_pegawai_655);
+
+            foreach ($array_pegawai_655 as $employees) {
+                $employees->tampilkan();
+            }
         }
-    }
         ?>
 
     </div>

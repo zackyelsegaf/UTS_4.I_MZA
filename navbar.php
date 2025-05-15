@@ -10,9 +10,6 @@
             <a class="nav-link text-green <?= ($page == 'pegawai.php') ? 'active' : '' ?>" href="pegawai.php"><i class="fa-solid fa-users">&nbsp;&nbsp;&nbsp;</i>Pegawai</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-green <?= ($page == 'penggajian.php') ? 'active' : '' ?>" href="penggajian.php"><i class="fa-solid fa-sack-dollar">&nbsp;&nbsp;&nbsp;</i>Penggajian</a>
-        </li>
-        <li class="nav-item">
             <a class="nav-link text-green <?= ($page == 'tunjangan.php') ? 'active' : '' ?>" href="tunjangan.php"><i class="fa-solid fa-coins">&nbsp;&nbsp;&nbsp;</i>Tunjangan</a>
         </li>
         <li class="nav-item">
