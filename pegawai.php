@@ -63,7 +63,7 @@ include('navbar.php')
                             <div class="col-md-6">
                                 <div class="col-md-12 mb-3">
                                     <label for="tanggal_lahir_655" class="form-label">Tanggal Lahir</label>
-                                    <input type="text" class="form-control" name="tanggal_lahir_655" required autofocus>
+                                    <input type="date" class="form-control" name="tanggal_lahir_655" required autofocus>
                                 </div>
                             </div>
                             <div class="col-md-6">
