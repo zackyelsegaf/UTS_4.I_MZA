@@ -7,3 +7,12 @@ Anggota:
 
 Dosen Pengampu:
 # Robi Wariyanto Abdullah
+
+Login:
+When admin is:
+Username: admin
+Password: admin123
+
+When employee is:
+Username: pegawai
+Password: pegawai456
