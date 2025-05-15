@@ -40,6 +40,7 @@ include('navbar.php');
                         <div class="d-grid">
                             <button type="submit" class="btn btn-success border-radius-default" name="submit">Hitung Gaji</button>
                         </div>
+                        
                     </div>
                 </form>
             </div>
@@ -127,9 +128,8 @@ include('navbar.php');
             $pegawai_input630 = new Gaji_630($nama630, $jabatan630, $gaji_pokok_630, $tunjangan630, $lembur630, $potongan630);
             array_push($data_pegawai630, $pegawai_input630);
 
-          foreach ($data_pegawai630 as $pegawai630) {
+            foreach ($data_pegawai630 as $pegawai630) {
                 $pegawai630->tampilkanData_630();
-            }
             }
         }
         ?>
