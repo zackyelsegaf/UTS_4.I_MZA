@@ -10,7 +10,7 @@ include('navbar.php')
                 <div class="card-header bg-green p-3 text-green">
                     <h5 class="mb-0"><strong>Input Data Pegawai</strong></h5>
                 </div>
-                <form action="pegawai.php" method="POST">
+                <form action="" method="POST">
                     <div class="row p-4">
                         <div class="col-md-12 mb-3">
                             <label for="no_pegawai_655" class="form-label">No. Pegawai</label>
@@ -196,7 +196,7 @@ include('navbar.php')
             }
         }
 
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (isset($_POST['submit'])) {
             $no_pegawai_655 = $_POST["no_pegawai_655"];
             $nik_pegawai_655 = $_POST["nik_pegawai_655"];
             $nama_depan_pegawai_655 = $_POST["nama_depan_pegawai_655"];
@@ -212,31 +212,35 @@ include('navbar.php')
             $posisi_pegawai_655 = $_POST["posisi_pegawai_655"];
             $link_cv_655 = $_POST["link_cv_655"];
 
-            new DataPegawai655($no_pegawai_655, $nik_pegawai_655, $nama_depan_pegawai_655, $nama_belakang_pegawai_655, $nomor_telepon_655, $tanggal_lahir_655, $tempat_lahir_655, $tanggal_rekrut_655, $sistem_rekrut_655, $lokasi_kerja_655, $divisi_pegawai_655, $status_pegawai_655, $posisi_pegawai_655, $link_cv_655);
-        }
-        new DataPegawai655("PG001", "1234567890", "Budi", "Santoso", "081234567890", "1990-01-01", "Yogyakarta", "2023-01-01", "Online", "Cabang 1", "Programmer", "Full Time - Tetap", "Programmer - Fullstack", "https://drive.google.com/file/d/xxx1");
-        new DataPegawai655("PG002", "9876543210", "Sari", "Rahma", "082345678901", "1992-02-02", "Surabaya", "2022-12-01", "Offline", "Cabang 2", "Finance", "Part Time", "Staff Administrasi Keuangan", "https://drive.google.com/file/d/xxx2");
-        new DataPegawai655("PG003", "1122334455", "Dewi", "Anggraini", "083456789012", "1993-03-03", "Magelang", "2023-02-01", "Online", "Cabang 3", "Marketing", "Magang", "Content - Marketing", "https://drive.google.com/file/d/xxx3");
-        new DataPegawai655("PG004", "2233445566", "Andi", "Saputra", "084567890123", "1989-04-04", "Bandung", "2023-03-01", "Online", "Cabang 1", "IT", "Full Time - Tetap", "System Analyst", "https://drive.google.com/file/d/xxx4");
-        new DataPegawai655("PG005", "3344556677", "Rina", "Amalia", "085678901234", "1991-05-05", "Jakarta", "2022-10-15", "Offline", "Cabang 2", "HRD", "Kontrak", "HR Officer", "https://drive.google.com/file/d/xxx5");
-        new DataPegawai655("PG006", "4455667788", "Dani", "Wijaya", "086789012345", "1994-06-06", "Bekasi", "2021-09-10", "Online", "Cabang 3", "Support", "Full Time - Tetap", "IT Support", "https://drive.google.com/file/d/xxx6");
-        new DataPegawai655("PG007", "5566778899", "Tari", "Lestari", "087890123456", "1990-07-07", "Semarang", "2020-08-20", "Offline", "Cabang 1", "Sales", "Magang", "Sales Representative", "https://drive.google.com/file/d/xxx7");
-        new DataPegawai655("PG008", "6677889900", "Galih", "Pratama", "088901234567", "1995-08-08", "Malang", "2022-01-05", "Online", "Cabang 2", "Finance", "Part Time", "Finance Staff", "https://drive.google.com/file/d/xxx8");
-        new DataPegawai655("PG009", "7788990011", "Lina", "Maulida", "089012345678", "1988-09-09", "Solo", "2023-07-07", "Offline", "Cabang 3", "Marketing", "Full Time - Tetap", "Digital Marketing", "https://drive.google.com/file/d/xxx9");
-        new DataPegawai655("PG010", "8899001122", "Fajar", "Yusuf", "081122334455", "1992-10-10", "Depok", "2022-05-15", "Online", "Cabang 1", "HRD", "Full Time - Tetap", "Recruiter", "https://drive.google.com/file/d/xxx10");
-        new DataPegawai655("PG011", "9900112233", "Citra", "Ningrum", "082233445566", "1993-11-11", "Palembang", "2021-11-01", "Offline", "Cabang 2", "Support", "Magang", "Customer Support", "https://drive.google.com/file/d/xxx11");
-        new DataPegawai655("PG012", "1011121314", "Rico", "Gunawan", "083344556677", "1996-12-12", "Pontianak", "2023-04-04", "Online", "Cabang 3", "IT", "Part Time", "Backend Developer", "https://drive.google.com/file/d/xxx12");
-        new DataPegawai655("PG013", "1112131415", "Nia", "Fitriani", "084455667788", "1994-01-13", "Makassar", "2022-03-03", "Offline", "Cabang 1", "Sales", "Kontrak", "Sales Admin", "https://drive.google.com/file/d/xxx13");
-        new DataPegawai655("PG014", "1213141516", "Yoga", "Permana", "085566778899", "1987-02-14", "Manado", "2023-06-06", "Online", "Cabang 2", "Finance", "Full Time - Tetap", "Tax Officer", "https://drive.google.com/file/d/xxx14");
-        new DataPegawai655("PG015", "1314151617", "Anisa", "Putri", "086677889900", "1995-03-15", "Batam", "2021-02-20", "Offline", "Cabang 3", "Marketing", "Magang", "Copywriter", "https://drive.google.com/file/d/xxx15");
-        new DataPegawai655("PG016", "1415161718", "Hendra", "Kurniawan", "087788990011", "1993-04-16", "Banjarmasin", "2020-12-01", "Online", "Cabang 1", "HRD", "Part Time", "Training Specialist", "https://drive.google.com/file/d/xxx16");
-        new DataPegawai655("PG017", "1516171819", "Mega", "Safitri", "088899001122", "1990-05-17", "Padang", "2023-08-08", "Offline", "Cabang 2", "IT", "Full Time - Tetap", "Frontend Developer", "https://drive.google.com/file/d/xxx17");
-        new DataPegawai655("PG018", "1617181920", "Bayu", "Nugroho", "089900112233", "1992-06-18", "Cirebon", "2022-09-09", "Online", "Cabang 3", "Support", "Kontrak", "Technical Support", "https://drive.google.com/file/d/xxx18");
+            $array_pegawai_655 = [];
+            array_push($array_pegawai_655, new DataPegawai655("PG001", "1234567890", "Budi", "Santoso", "081234567890", "1990-01-01", "Yogyakarta", "2023-01-01", "Online", "Cabang 1", "Programmer", "Full Time - Tetap", "Programmer - Fullstack", "https://drive.google.com/file/d/xxx1")); 
+            array_push($array_pegawai_655, new DataPegawai655("PG001", "1234567890", "Budi", "Santoso", "081234567890", "1990-01-01", "Yogyakarta", "2023-01-01", "Online", "Cabang 1", "Programmer", "Full Time - Tetap", "Programmer - Fullstack", "https://drive.google.com/file/d/xxx1"));
+            array_push($array_pegawai_655, new DataPegawai655("PG002", "9876543210", "Sari", "Rahma", "082345678901", "1992-02-02", "Surabaya", "2022-12-01", "Offline", "Cabang 2", "Finance", "Part Time", "Staff Administrasi Keuangan", "https://drive.google.com/file/d/xxx2"));
+            array_push($array_pegawai_655, new DataPegawai655("PG003", "1122334455", "Dewi", "Anggraini", "083456789012", "1993-03-03", "Magelang", "2023-02-01", "Online", "Cabang 3", "Marketing", "Magang", "Content - Marketing", "https://drive.google.com/file/d/xxx3"));
+            array_push($array_pegawai_655, new DataPegawai655("PG004", "2233445566", "Andi", "Saputra", "084567890123", "1989-04-04", "Bandung", "2023-03-01", "Online", "Cabang 1", "IT", "Full Time - Tetap", "System Analyst", "https://drive.google.com/file/d/xxx4"));
+            array_push($array_pegawai_655, new DataPegawai655("PG005", "3344556677", "Rina", "Amalia", "085678901234", "1991-05-05", "Jakarta", "2022-10-15", "Offline", "Cabang 2", "HRD", "Kontrak", "HR Officer", "https://drive.google.com/file/d/xxx5"));
+            array_push($array_pegawai_655, new DataPegawai655("PG006", "4455667788", "Dani", "Wijaya", "086789012345", "1994-06-06", "Bekasi", "2021-09-10", "Online", "Cabang 3", "Support", "Full Time - Tetap", "IT Support", "https://drive.google.com/file/d/xxx6"));
+            array_push($array_pegawai_655, new DataPegawai655("PG007", "5566778899", "Tari", "Lestari", "087890123456", "1990-07-07", "Semarang", "2020-08-20", "Offline", "Cabang 1", "Sales", "Magang", "Sales Representative", "https://drive.google.com/file/d/xxx7"));
+            array_push($array_pegawai_655, new DataPegawai655("PG008", "6677889900", "Galih", "Pratama", "088901234567", "1995-08-08", "Malang", "2022-01-05", "Online", "Cabang 2", "Finance", "Part Time", "Finance Staff", "https://drive.google.com/file/d/xxx8"));
+            array_push($array_pegawai_655, new DataPegawai655("PG009", "7788990011", "Lina", "Maulida", "089012345678", "1988-09-09", "Solo", "2023-07-07", "Offline", "Cabang 3", "Marketing", "Full Time - Tetap", "Digital Marketing", "https://drive.google.com/file/d/xxx9"));
+            array_push($array_pegawai_655, new DataPegawai655("PG010", "8899001122", "Fajar", "Yusuf", "081122334455", "1992-10-10", "Depok", "2022-05-15", "Online", "Cabang 1", "HRD", "Full Time - Tetap", "Recruiter", "https://drive.google.com/file/d/xxx10"));
+            array_push($array_pegawai_655, new DataPegawai655("PG011", "9900112233", "Citra", "Ningrum", "082233445566", "1993-11-11", "Palembang", "2021-11-01", "Offline", "Cabang 2", "Support", "Magang", "Customer Support", "https://drive.google.com/file/d/xxx11"));
+            array_push($array_pegawai_655, new DataPegawai655("PG012", "1011121314", "Rico", "Gunawan", "083344556677", "1996-12-12", "Pontianak", "2023-04-04", "Online", "Cabang 3", "IT", "Part Time", "Backend Developer", "https://drive.google.com/file/d/xxx12"));
+            array_push($array_pegawai_655, new DataPegawai655("PG013", "1112131415", "Nia", "Fitriani", "084455667788", "1994-01-13", "Makassar", "2022-03-03", "Offline", "Cabang 1", "Sales", "Kontrak", "Sales Admin", "https://drive.google.com/file/d/xxx13"));
+            array_push($array_pegawai_655, new DataPegawai655("PG014", "1213141516", "Yoga", "Permana", "085566778899", "1987-02-14", "Manado", "2023-06-06", "Online", "Cabang 2", "Finance", "Full Time - Tetap", "Tax Officer", "https://drive.google.com/file/d/xxx14"));
+            array_push($array_pegawai_655, new DataPegawai655("PG015", "1314151617", "Anisa", "Putri", "086677889900", "1995-03-15", "Batam", "2021-02-20", "Offline", "Cabang 3", "Marketing", "Magang", "Copywriter", "https://drive.google.com/file/d/xxx15"));
+            array_push($array_pegawai_655, new DataPegawai655("PG016", "1415161718", "Hendra", "Kurniawan", "087788990011", "1993-04-16", "Banjarmasin", "2020-12-01", "Online", "Cabang 1", "HRD", "Part Time", "Training Specialist", "https://drive.google.com/file/d/xxx16"));
+            array_push($array_pegawai_655, new DataPegawai655("PG017", "1516171819", "Mega", "Safitri", "088899001122", "1990-05-17", "Padang", "2023-08-08", "Offline", "Cabang 2", "IT", "Full Time - Tetap", "Frontend Developer", "https://drive.google.com/file/d/xxx17"));
+            array_push($array_pegawai_655, new DataPegawai655("PG018", "1617181920", "Bayu", "Nugroho", "089900112233", "1992-06-18", "Cirebon", "2022-09-09", "Online", "Cabang 3", "Support", "Kontrak", "Technical Support", "https://drive.google.com/file/d/xxx18"));
+        
 
+        $array_store_pegawai_655 = new DataPegawai655($no_pegawai_655, $nik_pegawai_655, $nama_depan_pegawai_655, $nama_belakang_pegawai_655, $nomor_telepon_655, $tanggal_lahir_655, $tempat_lahir_655, $tanggal_rekrut_655, $sistem_rekrut_655, $lokasi_kerja_655, $divisi_pegawai_655, $status_pegawai_655, $posisi_pegawai_655, $link_cv_655);
+        array_push($array_pegawai_655, $array_store_pegawai_655);
 
-        foreach (DataPegawai655::$list_pegawai as $pegawai) {
-            $pegawai->tampilkan();
+        foreach ($array_pegawai_655 as $employees) {
+            $employees->tampilkan();
         }
+    }
         ?>
 
     </div>

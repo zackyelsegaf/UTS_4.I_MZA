@@ -257,20 +257,28 @@
             //method publik untuk akses dan tampilan data dummy
             public function aksesTambahDataDummy() {
                 $this->tambahDataDummy();
-                echo '<div class="output"><h4>Data Dummy Berhasil Ditambahkan</h4><ul>';
-                foreach ($this->dataDummy as $data){
-                    foreach ($data as $key => $value){
-                        echo "<li><strong>".ucwords(str_replace("_"," ", $key)).":</strong>" .htmlspecialchars($value) ."</li>";
-                    }
-                }
-                echo '</ul></div>';
+                echo '<div class="col-md-6">
+                          <div class="card border-radius-default p-0">
+                              <div class="card-header bg-green p-3 text-green">
+                                  <h5 class="mb-0"><strong>Data Dummy Berhasil Ditambahkan</strong></h5>
+                              </div>
+                              <ul class="list-group list-group-flush">';
+                  foreach ($this->dataDummy as $data) {
+                      foreach ($data as $key => $value) {
+                          echo '<li class="list-group-item border-radius-default p-3"><strong>' . ucwords(str_replace("_", " ", $key)) . ':</strong> ' . htmlspecialchars($value) . '</li>';
+                      }
+                  }
+                  echo '      </ul>
+                          </div>
+                      </div>';
+
             }
           
         // method untuk menampilkan data absensi utama
         public function tampil()
           {
             echo '
-                <div class="col-md-6">
+                <div class="col-md-6 mb-5">
                     <div class="card border-radius-default p-0">
                         <div class="card-header bg-green p-3 text-green">
                             <h5 class="mb-0"><strong>Data Absensi - ' . htmlspecialchars($this->nama) . ' </strong></h5>
@@ -285,7 +293,7 @@
                             <li class="list-group-item p-3"><strong>Departemen:</strong> ' . htmlspecialchars($this->departemen) . '</li>
                             <li class="list-group-item p-3"><strong>Jabatan:</strong> ' . htmlspecialchars($this->position) . '</li>
                             <li class="list-group-item p-3"><strong>No. Telepon:</strong> ' . htmlspecialchars($this->phone) . '</li>
-                            <li class="list-group-item p-3"><strong>Email:</strong> ' . htmlspecialchars($this->email) . '</li>
+                            <li class="list-group-item border-radius-default p-3"><strong>Email:</strong> ' . htmlspecialchars($this->email) . '</li>
                         </ul>
                     </div>
                 </div>';
@@ -310,13 +318,21 @@
             public function tampilExtended()
             {
                 $this->tampil();
-                echo '<div class="output"><h4>Properti 609 tambahan</h4><ul>';
-                echo '<li><strong>Prop 609-1:</strong> ' . htmlspecialchars($this->prop609_1) . '</li>';
-                echo '<li><strong>Prop 609-2:</strong> ' . htmlspecialchars($this->prop609_2) . '</li>';
-                echo '<li><strong>Prop 609-3:</strong> ' . htmlspecialchars($this->prop609_3) . '</li>';
-                echo '<li><strong>Prop 609-4:</strong> ' . htmlspecialchars($this->prop609_4) . '</li>';
-                echo '<li><strong>Prop 609-5:</strong> ' . htmlspecialchars($this->prop609_5) . '</li>';
-                echo '</ul></div>';
+                echo '<div class="col-md-6 mb-5">
+                          <div class="card border-radius-default p-0">
+                              <div class="card-header bg-green p-3 text-green">
+                                  <h5 class="mb-0"><strong>Properti 609 Tambahan</strong></h5>
+                              </div>
+                              <ul class="list-group list-group-flush">
+                                  <li class="list-group-item p-3"><strong>Prop 609-1:</strong> ' . htmlspecialchars($this->prop609_1) . '</li>
+                                  <li class="list-group-item p-3"><strong>Prop 609-2:</strong> ' . htmlspecialchars($this->prop609_2) . '</li>
+                                  <li class="list-group-item p-3"><strong>Prop 609-3:</strong> ' . htmlspecialchars($this->prop609_3) . '</li>
+                                  <li class="list-group-item p-3"><strong>Prop 609-4:</strong> ' . htmlspecialchars($this->prop609_4) . '</li>
+                                  <li class="list-group-item border-radius-default p-3"><strong>Prop 609-5:</strong> ' . htmlspecialchars($this->prop609_5) . '</li>
+                              </ul>
+                          </div>
+                      </div>';
+
             }
         }
         
@@ -345,15 +361,23 @@
         $absensi->simpankeArray();
         $absensi->tampilExtended(); //tampilkan data dari form
         $absensi->aksesTambahDataDummy(); //tambah dummy ke absensi baru
-        echo '<div class="output"><h4>Data Absensi Tersimpan</h4><ul>';
-        foreach (Absensi::$dataAbsensi as $index => $data){
-          echo "<li><strong>Data ke-".($index+1).":</strong><ul>";
-          foreach ($data as $key => $value) {
-            echo "<li><strong>".ucwords(str_replace("_", " ", $key)).":</strong> ".htmlspecialchars($value)."</li>";
-          }
-          echo "</ul></li>";
-        }
-        echo '</ul></div>';
+        echo '
+        <div class="col-md-6 mb-5">
+            <div class="card border-radius-default p-0">
+                <div class="card-header bg-green p-3 text-green">
+                    <h5 class="mb-0"><strong>Data Absensi Tersimpan</strong></h5>
+                </div>
+            <ul class="list-group list-group-flush">';
+                foreach (Absensi::$dataAbsensi as $index => $data) {
+                    echo '<li class="list-group-item p-3">Data ke-' . ($index + 1);
+                    foreach ($data as $key => $value) {
+                        echo '<li class="list-group-item border-radius-default p-3" ><strong>' . ucwords(str_replace("_", " ", $key)) . ':</strong> ' . htmlspecialchars($value) . '</li>';
+                    }
+                }
+                echo '      </ul>
+                        </div>
+                    </div>';
+
 
     } catch (Exception $e) {
         echo '<div class="eror-message">'. htmlspecialchars($e->getMessage()) . '</div>';

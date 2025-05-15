@@ -161,23 +161,24 @@ include('navbar.php');
         }
 
         if (isset($_POST['submit'])) {
-            $obj635 = new SlipGaji635(
-                $_POST['nama_jabatan_635'],
-                $_POST['gaji_pokok_635'],
-                $_POST['tunjangan_635'],
-                $_POST['lembur_635'],
-                $_POST['potongan_635']
-            );
+            $nama_jabatan_635 = $_POST['nama_jabatan_635'];
+            $gaji_pokok_635 = $_POST['gaji_pokok_635'];
+            $tunjangan_635 = $_POST['tunjangan_635'];
+            $lembur_635 = $_POST['lembur_635'];
+            $potongan_635 = $_POST['potongan_635'];
 
-            SlipGaji635::tambahData($obj635);
+            $data_dummy_635 = [];
+            array_push($data_dummy_635, new SlipGaji635("Supervisor", 5000000, 1000000, 500000, 250000));
+            array_push($data_dummy_635, new SlipGaji635("Staff", 3000000, 800000, 300000, 100000));
+
+            $dummys = new SlipGaji635($nama_jabatan_635, $gaji_pokok_635, $tunjangan_635, $lembur_635, $potongan_635);
+            array_push($data_dummy_635, $dummys);
+
+            foreach ($data_dummy_635 as $mydummy) {
+                SlipGaji635::tambahData($mydummy);
+            }
+            SlipGaji635::tampilkanDataArray();
         }
-
-        $data_dummy1 = new SlipGaji635("Supervisor", 5000000, 1000000, 500000, 250000);
-        $data_dummy2 = new SlipGaji635("Staff", 3000000, 800000, 300000, 100000);
-        SlipGaji635::tambahData($data_dummy1);
-        SlipGaji635::tambahData($data_dummy2);
-
-        SlipGaji635::tampilkanDataArray();
         ?>
 
     </div>
