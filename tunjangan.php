@@ -93,7 +93,7 @@ include('navbar.php');
                 $this->tunjangan_630 = $tunjangan630;
                 $this->lembur_630 = $lembur630;
                 $this->potongan_630 = $potongan630;
-                $this->bonus_630 = 100000; // Dummy bonus
+                $this->bonus_630 = 100000; 
             }
 
             protected function hitungBonus_630() {
