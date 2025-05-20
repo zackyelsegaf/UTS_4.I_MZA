@@ -95,78 +95,104 @@ include('navbar.php');
                 <div class="card-header bg-green p-3 text-green">
                     <h5 class="mb-0"><strong>Form Jabatan 635</strong></h5>
                 </div>
-                <form action="" method="POST">
-                    <div class="row p-4">
-                        <div class="col-md-12 mb-3">
-                            <label for="nama_jabatan_635" class="form-label">Nama Jabatan</label>
-                            <input type="text" name="nama_jabatan_635" class="form-control" required>
-                        </div>
-                        <div class="col-md-12 mb-3">
-                            <label for="gaji_pokok_635" class="form-label">Gaji Pokok</label>
-                            <input type="text" name="gaji_pokok_635" class="form-control" required>
-                        </div>
-                        <div class="col-md-12 mb-3">
-                            <label for="tunjangan_635" class="form-label">Tunjangan</label>
-                            <input type="text" name="tunjangan_635" class="form-control" required>
-                        </div>
-                        <div class="col-md-12 mb-3">
-                            <label for="lembur_635" class="form-label">Lembur</label>
-                            <input type="text" name="lembur_635" class="form-control" required>
-                        </div>
-                        <div class="col-md-12 mb-3">
-                            <label for="potongan_635" class="form-label">Potongan</label>
-                            <input type="text" name="potongan_635" class="form-control" required>
-                        </div>
-                        <div class="d-grid">
-                            <button type="submit" name="submit" class="btn btn-success border-radius-default">Proses</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
+<form action="" method="POST">
+    <div class="row p-4">
+        <div class="col-12 mb-3">
+            <label for="nama_pegawai_635" class="form-label">Nama Pegawai</label>
+            <input type="text" name="nama_pegawai_635" class="form-control" required>
         </div>
+        <div class="col-12 mb-3">
+            <label for="divisi_635" class="form-label">Divisi / Departemen</label>
+            <input type="text" name="divisi_635" class="form-control" required>
+        </div>
+        <div class="col-12 mb-3">
+            <label for="nama_jabatan_635" class="form-label">Nama Jabatan</label>
+            <select name="nama_jabatan_635" class="form-control" required>
+                <option value="">-- Pilih Jabatan --</option>
+                <option value="Magang">Magang</option>
+                <option value="Karyawan Sementara">Karyawan Sementara</option>
+                <option value="Staff Tetap">Staff Tetap</option>
+                <option value="Kepala Divisi">Kepala Divisi</option>
+            </select>
+        </div>
+        <div class="col-12 mb-3">
+            <label for="jenis_pekerjaan_635" class="form-label">Jenis Pekerjaan</label>
+            <select name="jenis_pekerjaan_635" class="form-control" required>
+                <option value="">-- Pilih Jenis Pekerjaan --</option>
+                <option value="Full-time">Full-time</option>
+                <option value="Part-time">Part-time</option>
+                <option value="Remote">Remote</option>
+                <option value="Kontrak">Kontrak</option>
+            </select>
+        </div>
+        <div class="col-12 mb-3">
+            <label for="status_pajak_635" class="form-label">Status Pajak</label>
+            <select name="status_pajak_635" class="form-control" required>
+                <option value="">-- Pilih Status Pajak --</option>
+                <option value="TK/0">TK/0</option>
+                <option value="TK/1">TK/1</option>
+                <option value="K/0">K/0</option>
+                <option value="K/1">K/1</option>
+            </select>
+        </div>
+        <div class="col-12 d-grid">
+            <button type="submit" name="submit" class="btn btn-success border-radius-default">Proses</button>
+        </div>
+    </div>
+</form>
+
         <?php
         class Jabatan635
-        {
-            protected $nama_jabatan_635;
-            protected $gaji_pokok_635;
-            protected $tunjangan_635;
-            protected $lembur_635;
-            protected $potongan_635;
+{
+    protected $nama_pegawai_635;
+    protected $divisi_635;
+    protected $nama_jabatan_635;
+    protected $gaji_pokok_635;
+    protected $tunjangan_635;
+    protected $jenis_pekerjaan_635;
+    protected $status_pajak_635;
 
-            public function __construct($nama, $gaji, $tunj, $lembur, $potongan)
-            {
-                $this->nama_jabatan_635 = $nama;
-                $this->gaji_pokok_635 = $gaji;
-                $this->tunjangan_635 = $tunj;
-                $this->lembur_635 = $lembur;
-                $this->potongan_635 = $potongan;
-            }
-        }
+    public function __construct($nama_pegawai, $divisi, $nama, $gaji, $tunj, $jenis, $pajak)
+{
+    $this->nama_pegawai_635 = $nama_pegawai;
+    $this->divisi_635 = $divisi;
+    $this->nama_jabatan_635 = $nama;
+    $this->gaji_pokok_635 = $gaji;
+    $this->tunjangan_635 = $tunj;
+    $this->jenis_pekerjaan_635 = $jenis;
 
-        class SlipGaji635 extends Jabatan635
+    $this->status_pajak_635 = $pajak;
+}
+
+}
+        class InformasiJabatan635 extends Jabatan635
         {
             public static $data_array = [];
 
-            public function tampilkanSlip()
-            {
-                $total = $this->gaji_pokok_635 + $this->tunjangan_635 + $this->lembur_635 - $this->potongan_635;
-                echo '
-                    <div class="col-md-6 mb-5">
-                        <div class="card border-radius-default p-0">
-                            <div class="card-header bg-green p-3 text-green">
-                                <h5 class="mb-0"><strong>Form Jabatan 635</strong></h5>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item p-3">Nama Jabatan: ' . $this->nama_jabatan_635 . '</li>
-                                <li class="list-group-item p-3">Gaji Pokok: Rp. ' . number_format($this->gaji_pokok_635) . '</li>
-                                <li class="list-group-item p-3">Tunjangan: Rp. ' . number_format($this->tunjangan_635) . '</li>
-                                <li class="list-group-item p-3">Lembur: Rp. ' . number_format($this->lembur_635) . '</li>
-                                <li class="list-group-item p-3">Potongan: Rp. ' . number_format($this->potongan_635) . '</li>
-                                <li class="list-group-item border-radius-default p-3"><strong>Total Gaji: Rp. ' . number_format($total) . '</strong></li>
-                            </ul>
-                        </div>
-                    </div>';
-            }
+ public function tampilkanInformasi()
+{
+    $total = $this->gaji_pokok_635 + $this->tunjangan_635;
+
+    echo '
+        <div class="row p-4">
+        <div class="col-12 mb-3">
+            <div class="card border-radius-default p-0">
+                <div class="card-header bg-green p-3 text-green">
+                    <h5 class="mb-0"><strong>Informasi Jabatan 635</strong></h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item p-3">Nama Pegawai: ' . $this->nama_pegawai_635 . '</li>
+                    <li class="list-group-item p-3">Divisi: ' . $this->divisi_635 . '</li>
+                    <li class="list-group-item p-3">Nama Jabatan: ' . $this->nama_jabatan_635 . '</li>
+                    <li class="list-group-item p-3">Jenis Pekerjaan: ' . $this->jenis_pekerjaan_635 . '</li>
+                    <li class="list-group-item p-3">Status Pajak: ' . $this->status_pajak_635 . '</li>
+                    <li class="list-group-item p-3">Gaji Pokok: Rp. ' . number_format($this->gaji_pokok_635) . '</li>
+                    <li class="list-group-item p-3">Tunjangan: Rp. ' . number_format($this->tunjangan_635) . '</li>
+                    <li class="list-group-item border-radius-default p-3"><strong>Total Gaji: Rp. ' . number_format($total) . '</strong></li>
+                </ul>
+            </div>
+        </div>';
+}
 
             public static function tambahData($objek)
             {
@@ -176,30 +202,63 @@ include('navbar.php');
             public static function tampilkanDataArray()
             {
                 foreach (self::$data_array as $item) {
-                    $item->tampilkanSlip();
+                    $item->tampilkanInformasi();
                 }
             }
         }
 
-        if (isset($_POST['submit'])) {
-            $nama_jabatan_635 = $_POST['nama_jabatan_635'];
-            $gaji_pokok_635 = $_POST['gaji_pokok_635'];
-            $tunjangan_635 = $_POST['tunjangan_635'];
-            $lembur_635 = $_POST['lembur_635'];
-            $potongan_635 = $_POST['potongan_635'];
+if (isset($_POST['submit'])) {
+    $nama_pegawai_635 = $_POST['nama_pegawai_635'];
+    $divisi_635 = $_POST['divisi_635'];
+    $nama_jabatan_635 = $_POST['nama_jabatan_635'];
+    $jenis_pekerjaan_635 = $_POST['jenis_pekerjaan_635'];
+    $status_pajak_635 = $_POST['status_pajak_635'];
 
-            $data_dummy_635 = [];
-            array_push($data_dummy_635, new SlipGaji635("Supervisor", 5000000, 1000000, 500000, 250000));
-            array_push($data_dummy_635, new SlipGaji635("Staff", 3000000, 800000, 300000, 100000));
+    $gaji_mapping = [
+        "Magang" => [2500000, 500000],
+        "Karyawan Sementara" => [3000000, 750000],
+        "Staff Tetap" => [4000000, 1000000],
+        "Kepala Divisi" => [6000000, 2000000]
+    ];
 
-            $dummys = new SlipGaji635($nama_jabatan_635, $gaji_pokok_635, $tunjangan_635, $lembur_635, $potongan_635);
-            array_push($data_dummy_635, $dummys);
+    $jenis_mapping = [
+        "Full-time" => 500000,
+        "Part-time" => -300000,
+        "Remote" => -200000,
+        "Kontrak" => 250000
+    ];
 
-            foreach ($data_dummy_635 as $mydummy) {
-                SlipGaji635::tambahData($mydummy);
-            }
-            SlipGaji635::tampilkanDataArray();
+    if (array_key_exists($nama_jabatan_635, $gaji_mapping) && array_key_exists($jenis_pekerjaan_635, $jenis_mapping)) {
+        $gaji_pokok_635 = $gaji_mapping[$nama_jabatan_635][0];
+        $tunjangan_635 = $gaji_mapping[$nama_jabatan_635][1];
+
+        $dummys = new InformasiJabatan635(
+            $nama_pegawai_635,
+            $divisi_635,
+            $nama_jabatan_635,
+            $gaji_pokok_635,
+            $tunjangan_635,
+            $jenis_pekerjaan_635,
+            $status_pajak_635
+        );
+
+        $data_dummy_635 = [
+            new InformasiJabatan635("Rina", "Keuangan", "Karyawan Sementara", 3000000, 750000, "Full-time", "K/0"),
+            new InformasiJabatan635("Adi", "Teknik", "Staff Tetap", 4000000, 1000000, "Part-time", "TK/1"),
+            new InformasiJabatan635("Leo", "Programmer Backend", "Staff Tetap", 400000000, 10000000, "Remote", "TK/1"),
+            $dummys
+        ];
+
+        foreach ($data_dummy_635 as $item) {
+            InformasiJabatan635::tambahData($item);
         }
+
+        InformasiJabatan635::tampilkanDataArray();
+    } else {
+        echo "<div class='text-danger text-center'>Data tidak valid!</div>";
+    }
+}
+
         ?>
 
     </div>
