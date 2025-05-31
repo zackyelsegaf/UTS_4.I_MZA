@@ -1,6 +1,11 @@
 <?php
-include('header.php');
 include('navbar.php');
+session_start();
+if (!isset($_SESSION['user'])) {
+    header("Location: login.php");
+    exit;
+}
+include('header.php');
 ?>
 
 <!-- <style>
@@ -135,20 +140,27 @@ include('navbar.php');
   <div class="row py-3 px-3 justify-content-center">
     <div class="col-md-6 mb-2">
       <div class="card bg-green border-radius-default p-4">
-        <h4 class="text-center text-green mb-3"><i class="fa-solid fa-signature"></i>&nbsp;&nbsp;&nbsp;Putri Buana Della Puspita - <strong>Absensi</strong></h4>
-        <marquee direction="right" scrollamount="10">
-          <div class="row col-md-12">
-            <div class="col-md-4">
-              <h6 class="text-center text-green"><i class="fa-solid fa-address-card"></i>&nbsp;&nbsp;&nbsp;2313010609</h6>
-            </div>
-            <div class="col-md-4">
-              <h6 class="text-center text-green"><i class="fa-solid fa-graduation-cap"></i>&nbsp;&nbsp;&nbsp;4.I Class</h6>
-            </div>
-            <div class="col-md-4">
-              <h6 class="text-center text-green"><i class="fa-solid fa-book"></i>&nbsp;&nbsp;&nbsp;Pemrograman Web</h6>
-            </div>
+          <div class="row justify-content-around">
+              <div class="col-md-4">
+                  <img src="foto_kita/<?= $_SESSION['foto']; ?>" width="120" alt="Foto <?= $_SESSION['nama']; ?>" class="border-radius-default p-1">
+              </div>
+              <div class="col-md-8">
+                  <h4 class=" text-green mb-3"><?= $_SESSION['nama']; ?></h4>
+                  <marquee direction="right" scrollamount="10">
+                      <div class="row col-lg-12">
+                          <div class="col-md-4">
+                              <h6 class="text-center text-green"><?= $_SESSION['nim']; ?></h6>
+                          </div>
+                          <div class="col-md-4">
+                              <h6 class="text-center text-green">4.I Class</h6>
+                          </div>
+                          <div class="col-md-4">
+                              <h6 class="text-center text-green">Pemrograman Web</h6>
+                          </div>
+                      </div>
+                  </marquee>
+              </div>
           </div>
-        </marquee>
       </div>
     </div>
   </div>
