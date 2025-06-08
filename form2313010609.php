@@ -1,7 +1,7 @@
 <?php
 include('navbar.php');
 session_start();
-if (!isset($_SESSION['user'])) {
+if (!isset($_SESSION['nim'])) {
     header("Location: login.php");
     exit;
 }

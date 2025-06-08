@@ -1,6 +1,10 @@
 <?php
 include('header.php');
 session_start();
+if (isset($_SESSION['nim'])) {
+    header("Location: form" . $_SESSION['nim'] . ".php");
+    exit;
+}
 
 class LoginKelompok
 {
