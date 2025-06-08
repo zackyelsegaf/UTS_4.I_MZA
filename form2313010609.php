@@ -235,7 +235,6 @@ include('header.php');
         public $nip, $nama, $tanggal, $jamMasuk, $jamKeluar, $status, $departemen, $position, $phone, $email;
         protected $dataDummy = [];
 
-          //konstruktor untuk inisialisasi properti absensi
         public function __construct($nip, $nama, $tanggal, $jam_masuk, $jam_keluar, $status, $departemen, $position, $phone, $email)
         {
           $this->nip = $nip;
@@ -251,7 +250,6 @@ include('header.php');
         }
         public static $dataAbsensi = [];
 
-          //menyimpan data absensi saat ini kedalam array statis
         public function simpankeArray()
         {
           $data = [
@@ -271,7 +269,6 @@ include('header.php');
           array_push(self::$dataAbsensi, $data);
         }
 
-          //tambah 1 data dummy
         protected function tambahDataDummy()
         {
           $dummy = [
@@ -309,7 +306,6 @@ include('header.php');
                       </div>';
         }
 
-          //menampilkan data absensi 
         public function tampil()
         {
           echo '
@@ -335,12 +331,10 @@ include('header.php');
         }
       }
 
-      //kelas turunan Absensi dengan tambahan properti
       class Absensi609 extends Absensi
       {
         public $prop609_1, $prop609_2, $prop609_3, $prop609_4, $prop609_5;
 
-          //konstruktor absensi609, memanggil konstruktor induk dan inisialisasi properti tambah
         public function __construct($nip, $nama, $tanggal, $jam_masuk, $jam_keluar, $status, $departemen, $position, $phone, $email, $p1, $p2, $p3, $p4, $p5)
         {
           parent::__construct($nip, $nama, $tanggal, $jam_masuk, $jam_keluar, $status, $departemen, $position, $phone, $email);
@@ -351,7 +345,6 @@ include('header.php');
           $this->prop609_5 = $p5;
         }
 
-          //menampilkan data absensi dan properti tambah
         public function tampilExtended()
         {
           $this->tampil();
@@ -372,7 +365,6 @@ include('header.php');
         }
       }
 
-        //proses instansiasi dan pemanggilan
       try {
         $extraProps = ["Extra1", "Extra2", "Extra3", "Extra4", "Extra5"];
         $absensi = new Absensi609(
@@ -389,13 +381,11 @@ include('header.php');
           ...$extraProps
         );
 
-          //contoh pengunaan dummy
         $object609 = new Absensi609("123", "Test", "2025-01-01", "08:00", "17:00", "Hadir", "IT", "Admin", "081212", "test@example.com", "A", "B", "C", "D", "E");
         $object609->aksesTambahDataDummy();
         $absensi->simpankeArray();
         $absensi->tampilExtended();
         $absensi->aksesTambahDataDummy();
-          //tampilkan semua data disimpan
         echo '
         <div class="col-md-6 mb-5">
             <div class="card border-radius-default p-0">
