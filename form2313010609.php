@@ -172,7 +172,7 @@ include('header.php');
         <div class="card-header bg-green p-3 text-green">
           <h5 class="mb-0"><strong>Input Data Absensi</strong></h5>
         </div>
-        <form action="absensi.php" method="POST">
+        <form action="form2313010609.php" method="POST">
           <div class="row p-4">
             <div class="col-md-12 mb-3">
               <label for="609_nip" class="form-label">NIP Pegawai</label>

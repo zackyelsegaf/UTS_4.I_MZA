@@ -33,7 +33,7 @@ class LoginKelompok
 
         $foto = [
             "2313010655" => "zacky.jpg",
-            "2313010630" => "lifia.png",
+            "2313010630" => "lifia.jpg",
             "2313010635" => "fathya.jpg",
             "2313010609" => "della.jpg"
         ];
