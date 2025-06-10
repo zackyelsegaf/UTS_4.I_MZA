@@ -6,7 +6,7 @@ if (isset($_SESSION['nim'])) {
     exit;
 }
 
-class LoginKelompok
+class LoginKelompok2
 {
     private $usernames;
     private $passwords;
@@ -17,9 +17,8 @@ class LoginKelompok
         $this->passwords = ['2313010655', '2313010630', '2313010635', '2313010609'];
     }
  
-    public function proses_loginKelompok($input_user, $input_pass)
+    public function proses_loginKelompok2($input_user, $input_pass)
     {
-        session_start();
 
         $username = [
             "2313010655" => "2313010655",
@@ -43,7 +42,6 @@ class LoginKelompok
         ];
 
         if (isset($username[$input_user]) && $username[$input_user] === $input_pass) {
-            // Set session
             $_SESSION['user'] = $input_user;
             $_SESSION['nama'] = $nama[$input_user];
             $_SESSION['nim']  = $input_user;
@@ -63,8 +61,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'] ?? '';
     $password = $_POST['password'] ?? '';
 
-    $login = new LoginKelompok();
-    $error = $login->proses_loginKelompok($username, $password);
+    $login = new LoginKelompok2();
+    $error = $login->proses_loginKelompok2($username, $password);
 }
 ?>
 <div class="bg-green">
